@@ -1,5 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
+
+import { Container, Row } from 'react-bootstrap'
 
 const Login: NextPage = () => {
     return (
@@ -7,9 +10,17 @@ const Login: NextPage = () => {
             <Head>
                 <title>Login</title>
             </Head>
-            <main>
-                <h1>Login aqui</h1>
-            </main>
+
+            <aside className="container">
+                <div className="row">
+                    <Image
+                        src="/src/assets/analyze-1.jpg"
+                        alt="Picture of the author"
+                        width="350px"
+                        height="300px"
+                    />
+                </div>
+            </aside>
         </div>
     )
 }
