@@ -1,0 +1,150 @@
+$login-primary-color: #835AFD;
+$login-auxiliar-color: #A8A8B3;
+$login-bg-color:#F8F8F8;
+
+
+#login-main-container{
+
+    #login-aside-section{
+        height:100vh;
+
+        background: $login-primary-color;
+        color: #FFF;
+
+        padding: 120px 80px;
+
+        .login-aside-content{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        img{
+            max-width: 340px;
+            width: 100%;
+            display:block;
+         }
+
+        strong{
+            font: 700 36px 'Poppins', sans-serif;
+            margin-top: 48px;
+            line-height: 42px;
+        }
+
+        p{
+            font: 700 16px 'Poppins', sans-serif;
+            margin-top: 8px;
+            line-height: 32px;
+
+            color: $login-bg-color;
+
+        }
+
+    }
+
+    #login-auth-section{
+        height:100vh;
+
+        background: $login-bg-color;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0 32px;
+
+        .separator{
+            max-width: 300px;
+            width: 100%;
+            font-size:14px;
+            color: $login-auxiliar-color;
+
+            margin: 16px 0;
+            display: flex;
+            align-items:center ;
+
+            &::before{
+                content: "";
+                flex:1;
+
+                height: 1px;
+                background: $login-auxiliar-color;
+                margin-right: 16px;
+            }
+
+            &::after{
+                content: "";
+                flex:1;
+
+                height: 1px;
+                background: $login-auxiliar-color;
+                margin-left: 16px;
+            }
+        }
+
+        .password-area{
+            display: flex;
+        }
+
+        form{
+            max-width: 320px;
+            width:100%;
+
+            label{
+                display: block;
+                padding:8px;
+            }
+            input{
+                border-radius: 8px;
+
+                max-width: 320px;
+                width: 100%;
+
+                height:36px;
+
+                font: 400 14px "Poppins", sans-serif;
+                padding: 0 28px 0 16px;
+                background: #FFF;
+                border: 1px solid $login-auxiliar-color;
+
+            }
+        }
+        .btn-hide-password{
+            font-size: 20px;
+
+            outline: none;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+
+            margin-top: -4px;
+            margin-left: -24px;
+            &:hover, &:focus{
+                color:$login-primary-color;
+            }
+
+        }
+        .login-submit{
+            margin-top: 32px;
+
+            border-radius: 8px;
+
+            max-width: 320px;
+            width: 100%;
+            height: 36px;
+            font-weight: 500;
+            background: $login-primary-color;
+            color: $login-bg-color;
+
+            cursor: pointer;
+            border: 0;
+
+            transition: filter 0.2s;
+            &:hover{
+                filter:brightness(0.9);
+            }
+        }
+    }
+}
+

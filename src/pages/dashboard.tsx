@@ -5,11 +5,13 @@ const Dashboard: NextPage = () => {
     return (
         <div>
             <Head>
-                <title>Login</title>
+                <title>Dashboard</title>
             </Head>
-            <main>
-                <h1>Dashboard Aqui</h1>
-            </main>
+
+            <div>
+                <aside></aside>
+                <main></main>
+            </div>
         </div>
     )
 }
