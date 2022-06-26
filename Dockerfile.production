@@ -33,7 +33,6 @@ WORKDIR /app
 COPY src/pages ./pages
 COPY public ./public
 COPY src/styles ./styles
-COPY src/assets ./assets
 COPY /src/components ./components
 
 
