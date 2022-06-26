@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+    api:
+        image: tracking-trade
+        build: Dockerfile.production
+        ports:
+            - 3000:3000

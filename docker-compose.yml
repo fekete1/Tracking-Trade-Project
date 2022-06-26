@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    api:
+        image: tracking-trade
+        build: .
+        ports:
+            - 3000:3000
+        volumes:
+            - ./src/pages:/app/pages
+            - ./public:/app/public
+            - ./src/styles:/app/styles
+            - ./src/assets:/app/assets
+            - ./src/components:/app/components
+            - ./next.config.js:/app/next.config.js

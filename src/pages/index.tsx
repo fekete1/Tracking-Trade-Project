@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Chart from 'react-apexcharts'
 import { Button } from 'react-bootstrap'
+
+import dynamic from 'next/dynamic'
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const Home: NextPage = () => {
     return (
