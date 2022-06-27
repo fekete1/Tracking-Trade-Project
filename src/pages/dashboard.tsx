@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { SideMenu } from '../components/SideMenu'
 
 const Dashboard: NextPage = () => {
     return (
@@ -8,10 +9,7 @@ const Dashboard: NextPage = () => {
                 <title>Dashboard</title>
             </Head>
 
-            <div>
-                <aside></aside>
-                <main></main>
-            </div>
+            <SideMenu />
         </div>
     )
 }
