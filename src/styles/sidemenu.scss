@@ -1,0 +1,48 @@
+$side-menu-color:#2a3042;
+$bg-primary-color: #FFF;
+$bg-auxiliar-color: #f3f3f8;
+
+#sidebar-main-container{
+    margin:0;
+    padding: 0;
+
+    .sidebar{
+        background:$side-menu-color;
+        color: $bg-primary-color;
+        height: 100vh;
+        width: 180px;
+
+        ul {
+            padding-left: 10px;
+            padding-top: 60px;
+
+            .menu-label{
+                font: 600 10px Sans-serif;
+                text-transform: uppercase;
+                color:#656c82;
+
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+
+            li{
+                padding: 4px;
+            }
+
+            li a{
+                color: $bg-primary-color;
+                text-decoration: none;
+
+                span{
+                    font: 500 11px Sans-serif;
+                }
+
+            }
+        }
+    }
+
+}
+
+.children{
+    display:flex;
+}
