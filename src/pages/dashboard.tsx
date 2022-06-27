@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { SideMenu } from '../components/SideMenu'
+import { TopMenu } from '../components/TopMenu'
 
 const Dashboard: NextPage = () => {
     return (
@@ -9,7 +9,7 @@ const Dashboard: NextPage = () => {
                 <title>Dashboard</title>
             </Head>
 
-            <SideMenu />
+            <TopMenu />
         </div>
     )
 }

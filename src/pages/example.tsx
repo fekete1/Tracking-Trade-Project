@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Button } from 'react-bootstrap'
 
 import dynamic from 'next/dynamic'
+import { TopMenu } from '../components/TopMenu'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const Home: NextPage = () => {
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
                 <title>Homepage</title>
             </Head>
             <main>
+                <TopMenu />
                 <h1>Hello World</h1>
             </main>
 
@@ -32,9 +34,7 @@ const Home: NextPage = () => {
                         id: 'basic-bar',
                     },
                     xaxis: {
-                        categories: [
-                            1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998,
-                        ],
+                        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
                     },
                 }}
                 series={[
