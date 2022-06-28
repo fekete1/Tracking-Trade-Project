@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 interface LineChartProps {
-    chartTitle: String
+    chartTitle: string
 }
 
 export function LineChart({ chartTitle }: LineChartProps) {
@@ -30,7 +30,7 @@ export function LineChart({ chartTitle }: LineChartProps) {
             },
             title: {
                 text: chartTitle,
-                align: 'left',
+
                 float: true,
                 style: {
                     fontSize: '14px',
@@ -41,7 +41,7 @@ export function LineChart({ chartTitle }: LineChartProps) {
             },
             subtitle: {
                 text: 'Spot Price',
-                align: 'left',
+
                 offsetY: 20,
                 style: {
                     fontSize: '11px',

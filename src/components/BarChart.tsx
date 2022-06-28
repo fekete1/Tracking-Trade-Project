@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 interface BarChartProps {
-    chartTitle: String
+    chartTitle: string
 }
 
 export function BarChart({ chartTitle }: BarChartProps) {
@@ -24,7 +24,6 @@ export function BarChart({ chartTitle }: BarChartProps) {
             },
             title: {
                 text: chartTitle,
-                align: 'left',
                 style: {
                     fontSize: '14px',
                     fontWeight: 600,
@@ -34,7 +33,6 @@ export function BarChart({ chartTitle }: BarChartProps) {
             },
             subtitle: {
                 text: 'Spot Price',
-                align: 'left',
                 offsetY: 20,
                 style: {
                     fontSize: '11px',

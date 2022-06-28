@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 interface HeatMapChartProps {
-    chartTitle: String
+    chartTitle: string
 }
 
 export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
