@@ -11,7 +11,8 @@ $bg-auxiliar-color: #f3f3f8;
     .sidebar{
         background:$side-menu-color;
         color: $bg-primary-color;
-        height: 100vh;
+        min-height: 100vh;
+        max-height:100%;
         width: 180px;
 
         ul {
