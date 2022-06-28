@@ -29,28 +29,28 @@ const Dashboard: NextPage = () => {
                                 <div>Menu complicadinho de fazer</div>
                                 <Row xs={1} md={1} lg={2}>
                                     <Col>
-                                        <LineChart />
+                                        <LineChart chartTitle="Price" />
                                     </Col>
                                     <Col>
-                                        <LineChart />
-                                    </Col>
-                                </Row>
-
-                                <Row xs={1} md={1} lg={2}>
-                                    <Col>
-                                        <HeatMapChart />
-                                    </Col>
-                                    <Col>
-                                        <HeatMapChart />
+                                        <LineChart chartTitle="Price P2P" />
                                     </Col>
                                 </Row>
 
                                 <Row xs={1} md={1} lg={2}>
                                     <Col>
-                                        <BarChart />
+                                        <HeatMapChart chartTitle="Temperature" />
                                     </Col>
                                     <Col>
-                                        <BarChart />
+                                        <HeatMapChart chartTitle="Temperature P2P" />
+                                    </Col>
+                                </Row>
+
+                                <Row xs={1} md={1} lg={2}>
+                                    <Col>
+                                        <BarChart chartTitle="Presence" />
+                                    </Col>
+                                    <Col>
+                                        <BarChart chartTitle="Presense P2P" />
                                     </Col>
                                 </Row>
                             </Col>

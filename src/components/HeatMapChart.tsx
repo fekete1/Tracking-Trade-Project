@@ -1,7 +1,11 @@
 import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
-export function HeatMapChart() {
+interface HeatMapChartProps {
+    chartTitle: String
+}
+
+export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
     const options = {
         plotOptions: {
             heatmap: {
@@ -35,6 +39,45 @@ export function HeatMapChart() {
                 },
             },
         },
+        title: {
+            text: chartTitle,
+            align: 'left',
+            float: true,
+            style: {
+                fontSize: '14px',
+                fontWeight: 600,
+                fontFamily: 'sans-serif',
+                color: '#263238',
+            },
+        },
+        subtitle: {
+            text: 'Spot price',
+            align: 'left',
+            offsetY: 20,
+            style: {
+                fontSize: '12px',
+                fontWeight: 600,
+                fontFamily: 'sans-serif',
+                color: '#263238',
+            },
+        },
+        chart: {
+            id: 'heatmap-chart',
+            toolbar: {
+                show: true,
+                offsetX: 0,
+                offsetY: 0,
+                tools: {
+                    download: true,
+                    selection: false,
+                    zoom: false,
+                    zoomin: false,
+                    zoomout: false,
+                    pan: false,
+                    reset: false,
+                },
+            },
+        },
     }
 
     const series = {
@@ -63,7 +106,9 @@ export function HeatMapChart() {
     }
     return (
         <>
-            <Chart options={options} series={series.series} type="heatmap" max-width="500px" />
+            <div className="graphic-container">
+                <Chart options={options} series={series.series} type="heatmap" width="800px" height="250px" />
+            </div>
         </>
     )
 }

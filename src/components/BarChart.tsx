@@ -1,14 +1,47 @@
 import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
-export function BarChart() {
+interface BarChartProps {
+    chartTitle: String
+}
+
+export function BarChart({ chartTitle }: BarChartProps) {
     const options = {
         options: {
             chart: {
                 id: 'basic-bar',
+                toolbar: {
+                    show: true,
+                    offsetX: 0,
+                    offsetY: 0,
+                    tools: {
+                        download: true,
+                    },
+                },
             },
             xaxis: {
                 categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+            },
+            title: {
+                text: chartTitle,
+                align: 'left',
+                style: {
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    fontFamily: 'sans-serif',
+                    color: '#263238',
+                },
+            },
+            subtitle: {
+                text: 'Spot Price',
+                align: 'left',
+                offsetY: 20,
+                style: {
+                    fontSize: '11px',
+                    fontWeight: 600,
+                    fontFamily: 'sans-serif',
+                    color: '#263238',
+                },
             },
         },
     }
@@ -22,5 +55,9 @@ export function BarChart() {
         ],
     }
 
-    return <Chart options={options.options} series={series.series} type="bar" max-width="500" />
+    return (
+        <div className="graphic-container">
+            <Chart options={options.options} series={series.series} type="bar" max-height="250px" />
+        </div>
+    )
 }
