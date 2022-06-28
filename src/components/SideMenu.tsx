@@ -1,10 +1,14 @@
+import { NextPage } from 'next'
 import Link from 'next/link'
 
-import { useState } from 'react'
+import { ReactElement, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { SidebarData } from './SidebarData'
 
-export function SideMenu({ children }) {
+interface SideMenuProps {
+    children: ReactElement | ReactElement[]
+}
+export function SideMenu({ children }: SideMenuProps) {
     const [sideMenuIsOpen, setSideMenuIsOpen] = useState(false)
 
     const toggleSideMenu = () => {
@@ -22,8 +26,8 @@ export function SideMenu({ children }) {
                                 <li key={index} className={item.cName}>
                                     <Link href={item.path}>
                                         <a>
-                                            {item.icon}
-                                            <span>{item.title}</span>
+                                            <span className="page-icon">{item.icon}</span>
+                                            <span className="page-title">{item.title}</span>
                                         </a>
                                     </Link>
                                 </li>
@@ -35,25 +39,4 @@ export function SideMenu({ children }) {
             </div>
         </>
     )
-}
-
-{
-    /* <ul>
-                        <li>
-                            <Link href="/dashboard">
-                                <a>
-
-                                    Dashboard
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/example">
-                                <a>
-
-                                    Example
-                                </a>
-                            </Link>
-                        </li>
-                    </ul> */
 }

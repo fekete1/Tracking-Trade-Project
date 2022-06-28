@@ -6,30 +6,38 @@ import { AiOutlineExpand, AiOutlinePoweroff } from 'react-icons/ai'
 import { FaBars } from 'react-icons/fa'
 
 export function TopMenu() {
+    const item = {
+        name: 'Xeldu ',
+    }
+
     return (
         <>
-            <Navbar bg="light" sticky="top">
+            <Navbar bg="light" sticky="top" id="topmenu-main-container">
                 <Container className="d-flex">
-                    <div>
-                        <button type="button">
+                    <div className="search-section">
+                        <button type="button" className="btn btn-expand-sidebar">
                             <FaBars />
                         </button>
                         <Form>
-                            <BiSearchAlt />
-                            <Form.Control type="search" placeholder="search..." className="" aria-label="Search" />
+                            <span className="search-icon">
+                                <BiSearchAlt />
+                            </span>
+                            <Form.Control type="search" placeholder="Search..." className="search" aria-label="Search" />
                         </Form>
                     </div>
                     <div>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="">
-                                <button type="button">
+                                <button type="button" className="btn btn-expand-page">
                                     <AiOutlineExpand />
                                 </button>
-                                <NavDropdown title="Emanuel quiskas" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.4">
-                                        <AiOutlinePoweroff />
-                                        Logout
+                                <NavDropdown title={item.name} id="basic-nav-dropdown" align="end" className="logout-container">
+                                    <NavDropdown.Item href="#" className="logout-item">
+                                        <span className="logout-icon">
+                                            <AiOutlinePoweroff />
+                                        </span>
+                                        <span className="logout-text">Logout</span>
                                     </NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>

@@ -1,0 +1,72 @@
+$side-menu-color:#2a3042;
+$auxiliar-text-color: #656c82;
+$bg-primary-color: #FFF;
+$bg-auxiliar-color: #f3f3f8;
+
+
+#topmenu-main-container{
+
+    .search-section{
+        display:flex;
+        gap:10px;
+
+        form{
+            display:flex;
+            align-items: center;
+            position: relative;
+
+            .search-icon{
+                position:absolute;
+                left: 10px;
+                z-index:2;
+            }
+
+            .search{
+                font: 500 13px Sans-serif;
+                color: $auxiliar-text-color;
+
+                padding: 6px 8px 6px 28px;
+                border-radius: 16px;
+
+                height:36px;
+                max-width: 180px;
+                width: 100%;
+            }
+
+        }
+    }
+
+    .btn{
+        font-size: 16px;
+
+        outline: none;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+
+    }
+
+    a#basic-nav-dropdown{
+        font: 500 14px Sans-serif !important;
+        color: $auxiliar-text-color;
+    }
+
+    .logout-item{
+        display:flex;
+        align-items: center;
+        justify-content:flex-start;
+
+        .logout-icon{
+            font-size:14px;
+            color:red;
+            margin-right:4px;
+            margin-top:-4px;
+        }
+        .logout-text{
+            font: 600 13px Sans-serif;
+            color: $auxiliar-text-color;
+        }
+    }
+
+}
+

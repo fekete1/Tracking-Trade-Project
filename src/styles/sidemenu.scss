@@ -1,8 +1,10 @@
 $side-menu-color:#2a3042;
+$auxiliar-text-color: #656c82;
 $bg-primary-color: #FFF;
 $bg-auxiliar-color: #f3f3f8;
 
 #sidebar-main-container{
+    display:flex;
     margin:0;
     padding: 0;
 
@@ -17,13 +19,15 @@ $bg-auxiliar-color: #f3f3f8;
             padding-top: 60px;
 
             .menu-label{
-                font: 600 10px Sans-serif;
+                font: 600 11px Sans-serif;
                 text-transform: uppercase;
-                color:#656c82;
+                color: $auxiliar-text-color;
 
                 display: inline-block;
-                margin-bottom: 10px;
+                margin-bottom: 14px;
             }
+
+
 
             li{
                 padding: 4px;
@@ -32,17 +36,23 @@ $bg-auxiliar-color: #f3f3f8;
             li a{
                 color: $bg-primary-color;
                 text-decoration: none;
+                display: inline-block;
+                width: 100%;
 
-                span{
-                    font: 500 11px Sans-serif;
+                .page-icon{
+                    font-size:20px;
+                    margin-right:8px;
+                }
+
+                .page-title{
+                    font: 500 13px Sans-serif;
                 }
 
             }
         }
     }
-
+    .children{
+        width: 100%;
+    }
 }
 
-.children{
-    display:flex;
-}
