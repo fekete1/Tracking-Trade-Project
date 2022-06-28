@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Col, Container, Row } from 'react-bootstrap'
+import { BarChart } from '../components/BarChart'
 import { HeatMapChart } from '../components/HeatMapChart'
 import { LineChart } from '../components/LineChart'
 import { SideMenu } from '../components/SideMenu'
@@ -43,8 +44,12 @@ const Dashboard: NextPage = () => {
                             </Row>
 
                             <Row xs={1} md={1} lg={2}>
-                                <Col>Gráfico presença 1</Col>
-                                <Col>Gráfico presença 2</Col>
+                                <Col>
+                                    <BarChart />
+                                </Col>
+                                <Col>
+                                    <BarChart />
+                                </Col>
                             </Row>
                         </Col>
                     </Row>
