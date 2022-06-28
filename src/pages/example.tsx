@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Button } from 'react-bootstrap'
+import { SideMenu } from '../components/SideMenu'
 
 import dynamic from 'next/dynamic'
-import { SideMenu } from '../components/SideMenu'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const Home: NextPage = () => {
