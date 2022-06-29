@@ -2,6 +2,8 @@ $login-primary-color: #835AFD;
 $login-auxiliar-color: #A8A8B3;
 $login-bg-color:#F8F8F8;
 
+$auxiliar-text-color: #656c82;
+
 
 #login-main-container{
 
@@ -27,19 +29,16 @@ $login-bg-color:#F8F8F8;
 
         strong{
             font: 700 36px 'Poppins', sans-serif;
-            margin-top: 48px;
-            line-height: 42px;
+            line-height: 32px;
         }
 
         p{
             font: 700 16px 'Poppins', sans-serif;
             margin-top: 8px;
-            line-height: 32px;
+            line-height: 22px;
 
             color: $login-bg-color;
-
         }
-
     }
 
     #login-auth-section{
@@ -103,7 +102,8 @@ $login-bg-color:#F8F8F8;
 
                 height:36px;
 
-                font: 550 14px "Poppins", sans-serif;
+                font: 500 13px Sans-serif;
+                color: $auxiliar-text-color;
                 padding: 0 28px 0 16px;
                 background: #FFF;
                 border: 1px solid $login-auxiliar-color;

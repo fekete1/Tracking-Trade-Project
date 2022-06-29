@@ -1,8 +1,9 @@
-import { NextPage } from 'next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import { ReactElement, useState } from 'react'
-import { Container } from 'react-bootstrap'
+import { ToggleSideMenuContext } from '../contexts/ToggleSideMenuContext'
+
 import { SidebarData } from './SidebarData'
 
 interface SideMenuProps {
@@ -11,32 +12,36 @@ interface SideMenuProps {
 export function SideMenu({ children }: SideMenuProps) {
     const [sideMenuIsOpen, setSideMenuIsOpen] = useState(false)
 
-    const toggleSideMenu = () => {
+    function toggleSideMenu() {
         setSideMenuIsOpen(sideMenuIsOpen => !sideMenuIsOpen)
     }
 
+    const router = useRouter()
+
     return (
         <>
-            <div id="sidebar-main-container">
-                <nav className={sideMenuIsOpen ? 'sidebar sidebar-expanded' : 'sidebar sidebar-compressed'}>
-                    <ul>
-                        <span className="menu-label">menu</span>
-                        {SidebarData.map((item, index) => {
-                            return (
-                                <li key={index} className={item.cName}>
-                                    <Link href={item.path}>
-                                        <a>
-                                            <span className="page-icon">{item.icon}</span>
-                                            <span className="page-title">{item.title}</span>
-                                        </a>
-                                    </Link>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                </nav>
-                <main className="children">{children}</main>
-            </div>
+            <ToggleSideMenuContext.Provider value={{ sideMenuIsOpen, toggleSideMenu }}>
+                <div id="sidebar-main-container">
+                    <nav className={sideMenuIsOpen ? 'sidebar sidebar-expanded' : 'sidebar sidebar-compressed'}>
+                        <ul>
+                            <span className="menu-label">menu</span>
+                            {SidebarData.map((item, index) => {
+                                return (
+                                    <li key={index} className={router.pathname == item.path ? 'active' : ''}>
+                                        <Link href={item.path}>
+                                            <a>
+                                                <span className="page-icon">{item.icon}</span>
+                                                <span className="page-title">{item.title}</span>
+                                            </a>
+                                        </Link>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </nav>
+                    <main className="children">{children}</main>
+                </div>
+            </ToggleSideMenuContext.Provider>
         </>
     )
 }

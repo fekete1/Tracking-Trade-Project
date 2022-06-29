@@ -28,28 +28,28 @@ const Dashboard: NextPage = () => {
                             <Col className="products-charts" xs={12} md={6} lg={8}>
                                 <div>Menu complicadinho de fazer</div>
                                 <Row xs={1} md={1} lg={2}>
-                                    <Col className="center-y">
+                                    <Col className="justify-content-center">
                                         <LineChart chartTitle="Price" />
                                     </Col>
-                                    <Col className="center-y">
+                                    <Col className="justify-content-center">
                                         <LineChart chartTitle="Price P2P" />
                                     </Col>
                                 </Row>
 
                                 <Row xs={1} md={1} lg={2}>
-                                    <Col className="center-y">
+                                    <Col className="justify-content-center">
                                         <HeatMapChart chartTitle="Temperature" />
                                     </Col>
-                                    <Col className="center-y">
+                                    <Col className="justify-content-center">
                                         <HeatMapChart chartTitle="Temperature P2P" />
                                     </Col>
                                 </Row>
 
                                 <Row xs={1} md={1} lg={2}>
-                                    <Col className="center-y">
+                                    <Col className="justify-content-center">
                                         <BarChart chartTitle="Presence" />
                                     </Col>
-                                    <Col className="center-y">
+                                    <Col className="justify-content-center">
                                         <BarChart chartTitle="Presence P2P" />
                                     </Col>
                                 </Row>
