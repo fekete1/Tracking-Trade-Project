@@ -12,8 +12,8 @@ export function TopMenu() {
 
     return (
         <>
-            <Navbar bg="light" sticky="top" id="topmenu-main-container">
-                <Container className="d-flex">
+            <Navbar bg="light" sticky="top" id="top-menu-main-container">
+                <div className="top-menu-content">
                     <div className="search-section">
                         <button type="button" className="btn btn-expand-sidebar">
                             <FaBars />
@@ -43,7 +43,7 @@ export function TopMenu() {
                             </Nav>
                         </Navbar.Collapse>
                     </div>
-                </Container>
+                </div>
             </Navbar>
         </>
     )

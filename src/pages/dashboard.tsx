@@ -28,29 +28,29 @@ const Dashboard: NextPage = () => {
                             <Col className="products-charts" xs={12} md={6} lg={8}>
                                 <div>Menu complicadinho de fazer</div>
                                 <Row xs={1} md={1} lg={2}>
-                                    <Col>
+                                    <Col className="center-y">
                                         <LineChart chartTitle="Price" />
                                     </Col>
-                                    <Col>
+                                    <Col className="center-y">
                                         <LineChart chartTitle="Price P2P" />
                                     </Col>
                                 </Row>
 
                                 <Row xs={1} md={1} lg={2}>
-                                    <Col>
+                                    <Col className="center-y">
                                         <HeatMapChart chartTitle="Temperature" />
                                     </Col>
-                                    <Col>
+                                    <Col className="center-y">
                                         <HeatMapChart chartTitle="Temperature P2P" />
                                     </Col>
                                 </Row>
 
                                 <Row xs={1} md={1} lg={2}>
-                                    <Col>
+                                    <Col className="center-y">
                                         <BarChart chartTitle="Presence" />
                                     </Col>
-                                    <Col>
-                                        <BarChart chartTitle="Presense P2P" />
+                                    <Col className="center-y">
+                                        <BarChart chartTitle="Presence P2P" />
                                     </Col>
                                 </Row>
                             </Col>

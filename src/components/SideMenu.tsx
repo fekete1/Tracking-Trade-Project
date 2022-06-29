@@ -18,7 +18,7 @@ export function SideMenu({ children }: SideMenuProps) {
     return (
         <>
             <div id="sidebar-main-container">
-                <nav className="sidebar">
+                <nav className={sideMenuIsOpen ? 'sidebar sidebar-expanded' : 'sidebar sidebar-compressed'}>
                     <ul>
                         <span className="menu-label">menu</span>
                         {SidebarData.map((item, index) => {

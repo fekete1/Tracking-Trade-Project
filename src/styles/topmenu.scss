@@ -4,11 +4,21 @@ $bg-primary-color: #FFF;
 $bg-auxiliar-color: #f3f3f8;
 
 
-#topmenu-main-container{
+#top-menu-main-container{
+    margin-right:10px;
+    margin-left:10px;
+
+    .top-menu-content{
+        width: 100%;
+        display:flex;
+        justify-content: space-between;
+
+    }
 
     .search-section{
         display:flex;
         gap:10px;
+
 
         form{
             display:flex;

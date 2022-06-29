@@ -41,8 +41,6 @@ export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
         },
         title: {
             text: chartTitle,
-            align: 'left',
-            float: true,
             style: {
                 fontSize: '14px',
                 fontWeight: 600,
@@ -52,7 +50,6 @@ export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
         },
         subtitle: {
             text: 'Spot price',
-            align: 'left',
             offsetY: 20,
             style: {
                 fontSize: '12px',
@@ -105,10 +102,8 @@ export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
         ],
     }
     return (
-        <>
-            <div className="graphic-container">
-                <Chart options={options} series={series.series} type="heatmap" width="800px" height="250px" />
-            </div>
-        </>
+        <div className="graphic-container">
+            <Chart options={options} series={series.series} type="heatmap" width="800px" height="250px" />
+        </div>
     )
 }
