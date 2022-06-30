@@ -6,7 +6,7 @@ import { AiOutlineExpand, AiOutlinePoweroff } from 'react-icons/ai'
 import { FaBars } from 'react-icons/fa'
 import { useContext, useState } from 'react'
 import { ToggleSideMenuContext } from '../contexts/ToggleSideMenuContext'
-import { FullScreenContext } from '../contexts/FullScreenContext'
+import { ToggleFullScreenContext } from '../contexts/FullScreenContext'
 
 export function TopMenu() {
     const item = {
@@ -14,6 +14,7 @@ export function TopMenu() {
     }
 
     const { toggleSideMenu } = useContext(ToggleSideMenuContext)
+    const { toggleFullScreen } = useContext(ToggleFullScreenContext)
 
     return (
         <Navbar bg="light" sticky="top" id="top-menu-main-container">
@@ -33,7 +34,7 @@ export function TopMenu() {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="">
-                            <button type="button" className="btn btn-expand-page">
+                            <button type="button" className="btn btn-expand-page" onClick={toggleFullScreen}>
                                 <AiOutlineExpand />
                             </button>
                             <NavDropdown title={item.name} id="basic-nav-dropdown" align="end" className="logout-container">

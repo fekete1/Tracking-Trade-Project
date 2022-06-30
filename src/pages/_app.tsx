@@ -10,11 +10,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import type { AppProps } from 'next/app'
 import { ToggleSideMenuContextProvider } from '../contexts/ToggleSideMenuContext'
+import { ToggleFullScreenContextProvider } from '../contexts/FullScreenContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <ToggleSideMenuContextProvider>
-            <Component {...pageProps} />
+            <ToggleFullScreenContextProvider>
+                <Component {...pageProps} />
+            </ToggleFullScreenContextProvider>
         </ToggleSideMenuContextProvider>
     )
 }

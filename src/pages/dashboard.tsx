@@ -18,7 +18,7 @@ const Dashboard: NextPage = () => {
 
                 <SideMenu>
                     <TopMenu />
-                    <Container fluid>
+                    <Container fluid id="dashboard-main-container">
                         <Row xs={1} md={2}>
                             <Col className="products-infos" xs={12} md={6} lg={4}>
                                 <div>Informações do produto</div>

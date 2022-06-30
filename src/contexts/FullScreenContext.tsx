@@ -1,11 +1,38 @@
-import { createContext } from 'react'
+import { createContext, ReactNode, useState } from 'react'
 
-interface FullScreenHandle {
-    enter: () => Promise<void>
-    // Requests this element to go full screen.
-
-    exit: () => Promise<void>
-    // Requests this element to exit full screen.
+type ToggleFullScreenContextProps = {
+    children: ReactNode
 }
 
-export const FullScreenContext = createContext({})
+type ToggleFullScreenContextType = {
+    isFullScreen: boolean
+    toggleFullScreen: () => void
+}
+
+const initialValue = {
+    isFullScreen: false,
+    toggleFullScreen: () => {},
+}
+
+export const ToggleFullScreenContext = createContext<ToggleFullScreenContextType>(initialValue)
+
+export const ToggleFullScreenContextProvider = ({ children }: ToggleFullScreenContextProps) => {
+    const [isFullScreen, setIsFullScreen] = useState(initialValue.isFullScreen)
+
+    function toggleFullScreen() {
+        setIsFullScreen(isFullScreen => !isFullScreen)
+
+        let elem = document.body
+        console.log(elem)
+
+        if (!document.fullscreenElement) {
+            elem?.requestFullscreen().catch(err => {
+                alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`)
+            })
+        } else {
+            document.exitFullscreen()
+        }
+    }
+
+    return <ToggleFullScreenContext.Provider value={{ isFullScreen, toggleFullScreen }}>{children}</ToggleFullScreenContext.Provider>
+}

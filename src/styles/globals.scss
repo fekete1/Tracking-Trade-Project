@@ -29,18 +29,33 @@ li {
     scrollbar-color:  $scroll-primary-color $scroll-bg-color;
     }
 
-    /* Chrome, Edge, and Safari */
-    *::-webkit-scrollbar {
-        width: 5px;
-        height: 5px;
-    }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
 
-    *::-webkit-scrollbar-track {
-        background: $scroll-bg-color;
-    }
+*::-webkit-scrollbar-track {
+    background: $scroll-bg-color;
+}
 
-    *::-webkit-scrollbar-thumb {
-        background-color: #71748a;
-        border-radius: 16px;
-        border: 0px solid $scroll-bg-color;
-    }
+*::-webkit-scrollbar-thumb {
+    background-color: #71748a;
+    border-radius: 16px;
+    border: 0px solid $scroll-bg-color;
+}
+
+
+//Full Screen style para mostar a barra de rolagem
+body:fullscreen {
+    overflow: auto !important;
+  }
+  body:-ms-fullscreen {
+    overflow: auto !important;
+  }
+  body:-webkit-full-screen {
+    overflow: auto !important;
+  }
+  body:-moz-full-screen {
+    overflow: auto !important;
+  }
