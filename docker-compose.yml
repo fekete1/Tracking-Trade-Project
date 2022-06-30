@@ -12,4 +12,5 @@ services:
             - ./src/styles:/app/styles
             - ./src/assets:/app/assets
             - ./src/components:/app/components
+            - ./src/contexts:/app/contexts
             - ./next.config.js:/app/next.config.js

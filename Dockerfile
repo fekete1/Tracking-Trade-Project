@@ -10,7 +10,7 @@ COPY next.config.js ./next.config.js
 COPY src/pages ./pages
 COPY public ./public
 COPY src/styles ./styles
-COPY src/assets ./assets
 COPY /src/components ./components
+COPY /src/contexts ./contexts
 
 CMD ["yarn", "dev"]

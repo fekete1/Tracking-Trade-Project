@@ -34,6 +34,7 @@ COPY src/pages ./pages
 COPY public ./public
 COPY src/styles ./styles
 COPY /src/components ./components
+COPY /src/contexts ./contexts
 
 
 ENV NODE_ENV production
