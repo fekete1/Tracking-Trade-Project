@@ -1,3 +1,7 @@
+$scroll-primary-color: #71748a;
+$scroll-bg-color: #FFF;
+
+
 * {
     padding: 0;
     margin: 0;
@@ -22,21 +26,21 @@ li {
  /* Firefox */
  * {
     scrollbar-width: auto;
-    scrollbar-color: #8f54a0 #ffffff;
+    scrollbar-color:  $scroll-primary-color $scroll-bg-color;
     }
 
     /* Chrome, Edge, and Safari */
     *::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
+        width: 5px;
+        height: 5px;
     }
 
     *::-webkit-scrollbar-track {
-        background: #ffffff;
+        background: $scroll-bg-color;
     }
 
     *::-webkit-scrollbar-thumb {
-        background-color: #8f54a0;
+        background-color: #71748a;
         border-radius: 16px;
-        border: 0px solid #ffffff;
+        border: 0px solid $scroll-bg-color;
     }

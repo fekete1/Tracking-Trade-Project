@@ -30,8 +30,6 @@ export function LineChart({ chartTitle }: LineChartProps) {
             },
             title: {
                 text: chartTitle,
-
-                float: true,
                 style: {
                     fontSize: '14px',
                     fontWeight: 600,
@@ -41,7 +39,6 @@ export function LineChart({ chartTitle }: LineChartProps) {
             },
             subtitle: {
                 text: 'Spot Price',
-
                 offsetY: 20,
                 style: {
                     fontSize: '11px',
@@ -82,7 +79,7 @@ export function LineChart({ chartTitle }: LineChartProps) {
     return (
         <>
             <div className="graphic-container">
-                <Chart options={state.options} series={state.series} type="line" height="250px" />
+                <Chart options={state.options} series={state.series} type="line" height="250px" width="800px" />
             </div>
         </>
     )

@@ -11,7 +11,7 @@ import { TopMenu } from '../components/TopMenu'
 const Dashboard: NextPage = () => {
     return (
         <SSRProvider>
-            <div>
+            <>
                 <Head>
                     <title>Dashboard</title>
                 </Head>
@@ -57,7 +57,7 @@ const Dashboard: NextPage = () => {
                         </Row>
                     </Container>
                 </SideMenu>
-            </div>
+            </>
         </SSRProvider>
     )
 }

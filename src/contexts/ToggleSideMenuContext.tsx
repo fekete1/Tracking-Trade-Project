@@ -1,12 +1,27 @@
-import { createContext, useContext } from 'react'
+import { createContext, ReactNode, useState } from 'react'
+
+type ToggleSideMenuContextProps = {
+    children: ReactNode
+}
 
 type ToggleSideMenuContextType = {
     sideMenuIsOpen: boolean
     toggleSideMenu: () => void
 }
 
-export const ToggleSideMenuContext = createContext({} as ToggleSideMenuContextType)
+const initialValue = {
+    sideMenuIsOpen: false,
+    toggleSideMenu: () => {},
+}
 
-function toggleSideMenu() {
-    setSideMenuIsOpen(sideMenuIsOpen => !sideMenuIsOpen)
+export const ToggleSideMenuContext = createContext<ToggleSideMenuContextType>(initialValue)
+
+export const ToggleSideMenuContextProvider = ({ children }: ToggleSideMenuContextProps) => {
+    const [sideMenuIsOpen, setSideMenuIsOpen] = useState(initialValue.sideMenuIsOpen)
+
+    function toggleSideMenu() {
+        setSideMenuIsOpen(sideMenuIsOpen => !sideMenuIsOpen)
+    }
+
+    return <ToggleSideMenuContext.Provider value={{ sideMenuIsOpen, toggleSideMenu }}>{children}</ToggleSideMenuContext.Provider>
 }

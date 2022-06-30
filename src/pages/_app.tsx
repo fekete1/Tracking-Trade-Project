@@ -9,9 +9,14 @@ import '../styles/chart.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import type { AppProps } from 'next/app'
+import { ToggleSideMenuContextProvider } from '../contexts/ToggleSideMenuContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />
+    return (
+        <ToggleSideMenuContextProvider>
+            <Component {...pageProps} />
+        </ToggleSideMenuContextProvider>
+    )
 }
 
 export default MyApp
