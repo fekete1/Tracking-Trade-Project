@@ -4,17 +4,19 @@ import { Button, SSRProvider } from 'react-bootstrap'
 import { SideMenu } from '../components/SideMenu'
 
 import dynamic from 'next/dynamic'
+import { TopMenu } from '../components/TopMenu'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const Home: NextPage = () => {
     return (
         <SSRProvider>
-            <div>
+            <div style={{ background: 'white' }}>
                 <Head>
                     <title>Example</title>
                 </Head>
 
                 <SideMenu>
+                    <TopMenu />
                     <main>
                         <h1>Hello World</h1>
                     </main>
