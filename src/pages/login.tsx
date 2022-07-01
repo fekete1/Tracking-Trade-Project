@@ -7,7 +7,9 @@ import { RiLockPasswordFill } from 'react-icons/ri'
 import { AiOutlineEyeInvisible, AiFillEye } from 'react-icons/ai'
 
 import { Col, Container, Row, SSRProvider } from 'react-bootstrap'
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
+import { useQuery } from 'react-query'
+import axios from 'axios'
 
 const Login: NextPage = () => {
     const [isHidePassword, setIsHidePassword] = useState(false)
@@ -16,6 +18,34 @@ const Login: NextPage = () => {
         setIsHidePassword(isHidePassword => !isHidePassword)
     }
 
+    const cookies = {
+        '__Host-next-auth.csrf-token': '02468976634724029672b24fa1222b9fa5e24d29bf9b731a00d9e511251a2f95%7C19a7a3cf3579b9b65285f90163209372ef872d6d53ab7092122250c3b18fb638',
+        '__Secure-next-auth.callback-url': 'https%3A%2F%2Fomni-tracking-web-staging.herokuapp.com%2Fauth%2FsignIn',
+        '__Secure-next-auth.session-token':
+            'eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoiRGF2aSBWaWxlbGEgZGUgQXJhdWpvIiwiZW1haWwiOiJ0ZXN0ZUBleGFtcGxlLmNvbSIsInN1YiI6ImM5NjgxMWYwLTEzY2QtNGQ0Mi1hMzU0LTA3ZDY2MmE1YTY1OCIsImlkIjoiYzk2ODExZjAtMTNjZC00ZDQyLWEzNTQtMDdkNjYyYTVhNjU4IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjU2NjEyNjQ3LCJleHAiOjE2NTkyMDQ2NDd9.ij9ZdiMdMZd7FSpjIlbpXaZqnZfSlHv8ABE8ohtBeEwJzy6K3teF5_rG9jxAH1f-5mwEilgNysowpjXSU-tYtw',
+    }
+
+    const headers = {
+        Accept: '/',
+        'Accept-Language': 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7,de;q=0.6',
+        Connection: 'keep-alive',
+        Cookie: '__Host-next-auth.csrf-token=02468976634724029672b24fa1222b9fa5e24d29bf9b731a00d9e511251a2f95%7C19a7a3cf3579b9b65285f90163209372ef872d6d53ab7092122250c3b18fb638; __Secure-next-auth.callback-url=https%3A%2F%2Fomni-tracking-web-staging.herokuapp.com%2Fauth%2FsignIn; __Secure-next-auth.session-token=eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoiRGF2aSBWaWxlbGEgZGUgQXJhdWpvIiwiZW1haWwiOiJ0ZXN0ZUBleGFtcGxlLmNvbSIsInN1YiI6ImM5NjgxMWYwLTEzY2QtNGQ0Mi1hMzU0LTA3ZDY2MmE1YTY1OCIsImlkIjoiYzk2ODExZjAtMTNjZC00ZDQyLWEzNTQtMDdkNjYyYTVhNjU4IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjU2NjEyNjQ3LCJleHAiOjE2NTkyMDQ2NDd9.ij9ZdiMdMZd7FSpjIlbpXaZqnZfSlHv8ABE8ohtBeEwJzy6K3teF5_rG9jxAH1f-5mwEilgNysowpjXSU-tYtw',
+        'If-None-Match': '"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"',
+        Referer: 'https://omni-tracking-web-staging.herokuapp.com/en/admin/dashboard',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
+        'sec-ch-ua': '".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+    const { data, isFetched, error } = useQuery('login', async () => {
+        const response = await axios.get('https://omni-tracking-web-staging.herokuapp.com/api/auth/session', { withCredentials: true, headers: headers })
+        return response.data
+    })
+
+    console.log(data, isFetched, error)
     return (
         <SSRProvider>
             <div>

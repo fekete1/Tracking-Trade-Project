@@ -10,16 +10,20 @@ import '../styles/productinfo.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import type { AppProps } from 'next/app'
+import { QueryClientProvider } from 'react-query'
 import { ToggleSideMenuContextProvider } from '../contexts/ToggleSideMenuContext'
 import { ToggleFullScreenContextProvider } from '../contexts/FullScreenContext'
+import { queryClient } from '../services/QueryClient'
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <ToggleSideMenuContextProvider>
-            <ToggleFullScreenContextProvider>
-                <Component {...pageProps} />
-            </ToggleFullScreenContextProvider>
-        </ToggleSideMenuContextProvider>
+        <QueryClientProvider client={queryClient}>
+            <ToggleSideMenuContextProvider>
+                <ToggleFullScreenContextProvider>
+                    <Component {...pageProps} />
+                </ToggleFullScreenContextProvider>
+            </ToggleSideMenuContextProvider>
+        </QueryClientProvider>
     )
 }
 
