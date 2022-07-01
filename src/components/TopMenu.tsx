@@ -1,5 +1,4 @@
 import { Form, Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import { useFullScreenHandle } from 'react-full-screen'
 
 import { BiSearchAlt } from 'react-icons/bi'
 import { AiOutlineExpand, AiOutlinePoweroff } from 'react-icons/ai'
