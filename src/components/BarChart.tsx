@@ -55,7 +55,7 @@ export function BarChart({ chartTitle }: BarChartProps) {
 
     return (
         <div className="graphic-container">
-            <Chart options={options.options} series={series.series} type="bar" max-height="250px" />
+            <Chart options={options.options} series={series.series} type="bar" height="220px" />
         </div>
     )
 }

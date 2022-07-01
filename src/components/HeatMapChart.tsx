@@ -103,7 +103,7 @@ export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
     }
     return (
         <div className="graphic-container">
-            <Chart options={options} series={series.series} type="heatmap" width="800px" height="250px" />
+            <Chart options={options} series={series.series} type="heatmap" width="800px" height="220px" />
         </div>
     )
 }

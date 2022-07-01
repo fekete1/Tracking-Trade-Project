@@ -5,6 +5,7 @@ import '../styles/dashboard.scss'
 import '../styles/sidemenu.scss'
 import '../styles/topmenu.scss'
 import '../styles/chart.scss'
+import '../styles/productinfo.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 

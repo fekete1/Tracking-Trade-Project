@@ -79,7 +79,7 @@ export function LineChart({ chartTitle }: LineChartProps) {
     return (
         <>
             <div className="graphic-container">
-                <Chart options={state.options} series={state.series} type="line" height="250px" width="800px" />
+                <Chart options={state.options} series={state.series} type="line" height="220px" width="800px" />
             </div>
         </>
     )

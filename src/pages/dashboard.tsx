@@ -5,6 +5,7 @@ import { Col, Container, Row, SSRProvider } from 'react-bootstrap'
 import { BarChart } from '../components/BarChart'
 import { HeatMapChart } from '../components/HeatMapChart'
 import { LineChart } from '../components/LineChart'
+import { ProductInfo } from '../components/ProductInfo'
 import { SideMenu } from '../components/SideMenu'
 import { TopMenu } from '../components/TopMenu'
 
@@ -21,7 +22,7 @@ const Dashboard: NextPage = () => {
                     <Container fluid id="dashboard-main-container">
                         <Row xs={1} md={2}>
                             <Col className="products-infos" xs={12} md={6} lg={4}>
-                                <div>Informações do produto</div>
+                                <ProductInfo />
                                 <div>Informações do produto nas lojas</div>
                             </Col>
 

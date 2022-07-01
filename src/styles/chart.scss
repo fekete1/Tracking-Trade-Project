@@ -1,7 +1,16 @@
+$side-menu-color:#2a3042;
+$bg-auxiliar-color: #FFF;
+$bg-primary-color: #f3f3f8;
+
+
 .graphic-container {
-    max-width: 500px;
+    max-width: 800px;
     width: 100%;
     overflow-y: hidden;
     overflow-x: auto;
+    background: $bg-auxiliar-color;
+
+    border-radius: 4px;
+
   }
 
