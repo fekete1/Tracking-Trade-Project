@@ -41,7 +41,7 @@ const Login: NextPage = () => {
         'sec-ch-ua-platform': '"Windows"',
     }
     const { data, isFetched, error } = useQuery('login', async () => {
-        const response = await axios.get('https://omni-tracking-web-staging.herokuapp.com/api/auth/session', { withCredentials: true, headers: headers })
+        const response = await axios.get('https://omni-tracking-web-staging.herokuapp.com/api/auth/session', { withCredentials: true })
         return response.data
     })
 

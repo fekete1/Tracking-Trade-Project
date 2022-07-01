@@ -13,7 +13,7 @@ import type { AppProps } from 'next/app'
 import { QueryClientProvider } from 'react-query'
 import { ToggleSideMenuContextProvider } from '../contexts/ToggleSideMenuContext'
 import { ToggleFullScreenContextProvider } from '../contexts/FullScreenContext'
-import { queryClient } from '../services/QueryClient'
+import { queryClient } from '../services/queryClient'
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
