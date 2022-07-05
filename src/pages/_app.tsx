@@ -6,6 +6,8 @@ import '../styles/sidemenu.scss'
 import '../styles/topmenu.scss'
 import '../styles/chart.scss'
 import '../styles/productinfo.scss'
+import '../styles/productoffers.scss'
+import '../styles/chartsmenu.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 

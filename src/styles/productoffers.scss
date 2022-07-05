@@ -1,0 +1,87 @@
+@import "variables";
+
+#product-offers-container{
+    margin-top:12px;
+    margin-bottom: 12px;
+    max-height:560px;
+    background: $bg-auxiliar-color;
+    border-radius: 4px;
+    padding:12px;
+
+
+    .btn{
+        display: block;
+        width:100%;
+        background: $button-blue-default-color;
+        font: 600 13px sans-serif;
+        color: $bg-auxiliar-color;
+        padding: 8px 16px 8px 16px;
+
+        &:hover, &:focus{
+            background-color: $button-blue-clicked-color;
+        }
+    }
+
+    option{
+        text-align: start;
+    }
+
+    .product-offers-header{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .offers-label{
+            font: 600 14px Sans-serif;
+            color: $auxiliar-text-color;
+            margin: 8px;
+        }
+
+        .product-offers-menu{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 16px;
+
+            .menu-label{
+                font: 600 12px Sans-serif;
+                color: $auxiliar-text-color;
+                margin: 8px;
+            }
+            .btn-price{
+                option{
+                    border-radius: 4px;
+                    display: block;
+                    padding:10px;
+                }
+            }
+        }
+    }
+
+    .table{
+        margin-top:8px;
+
+        th{
+            font: 600 13px Sans-serif;
+            color: $side-menu-color;
+
+            &:not(:first-child){
+                text-align: center;
+            }
+        }
+
+        td{
+            font: 500 12px Sans-serif;
+            color: $auxiliar-text-color;
+
+            &:not(:first-child){
+                text-align: center;
+            }
+        }
+    }
+    .table>:not(:first-child) {
+        border-top: 0;
+    }
+}

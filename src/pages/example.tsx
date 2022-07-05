@@ -48,7 +48,7 @@ const Home: NextPage = () => {
                             },
                         ]}
                         type="bar"
-                        width="500"
+                        max-width="500"
                     />
                 </SideMenu>
             </div>

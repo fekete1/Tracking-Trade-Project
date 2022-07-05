@@ -1,6 +1,4 @@
-$side-menu-color:#2a3042;
-$bg-auxiliar-color: #FFF;
-$bg-primary-color: #f3f3f8;
+@import "variables";
 
 .justify-content-center{
     display:flex;
@@ -9,14 +7,25 @@ $bg-primary-color: #f3f3f8;
 
 #dashboard-main-container{
     background: $bg-primary-color;
+    max-width: 1900px;
+    width: 100%;
 
-    .products-charts{
+    .product-charts{
 
         .col{
+            padding-left:0;
             margin-bottom:12px;
-            padding-left: 0;
-
         }
     }
 
 }
+
+@media screen and  (max-width: 768px) {
+    #dashboard-main-container{
+        .product-charts{
+            .col{
+                padding-left: calc(var(--bs-gutter-x) * .5);
+            }
+        }
+    }
+ }

@@ -1,0 +1,40 @@
+@import "variables";
+
+#charts-menu-container{
+    background: $bg-auxiliar-color;
+    width: 100%;
+    padding:12px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap:12px;
+
+    .btn-group>.btn-check:checked+.btn{
+        z-index: 0;
+        background-color: $button-blue-clicked-color;
+    }
+
+    .btn{
+        background: $button-blue-default-color;
+        font: 600 13px sans-serif;
+        color: $bg-auxiliar-color;
+        padding: 8px 16px 8px 16px;
+
+        &:hover, &:focus{
+            background-color: $button-blue-clicked-color;
+        }
+    }
+}
+
+//Button
+
+
+@media screen and (max-width: 768px) {
+    #charts-menu-container{
+        margin-top: 0;
+    }
+ }
+
