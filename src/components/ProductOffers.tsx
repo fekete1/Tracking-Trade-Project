@@ -55,7 +55,7 @@ export function ProductOffers() {
                     </div>
                     <div>
                         <p className="menu-label">Price</p>
-                        <select className="btn btn-price" value={price} onChange={e => togglePriceOption(e.target.value)}>
+                        <select className="btn btn-price btn-shadow" value={price} onChange={e => togglePriceOption(e.target.value)}>
                             <option value="Mode">Mode</option>
                             <option value="VAR">VAR</option>
                             <option value="RRP">RRP</option>

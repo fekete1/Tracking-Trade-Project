@@ -48,6 +48,10 @@ li {
     border: 0px solid $scroll-bg-color;
 }
 
+.btn-shadow{
+    box-shadow: $box-shadow-button;
+}
+
 
 //Full Screen style para mostar a barra de rolagem
 body:fullscreen {

@@ -39,7 +39,13 @@ export function ChartsMenu() {
         <Container fluid id="charts-menu-container">
             <div>
                 <p className="button-label">Period</p>
-                <ToggleButtonGroup className="clickable-toggle-button" type="radio" name="period-options" defaultValue={periodValue} onChange={value => handlePeriodValue(value)}>
+                <ToggleButtonGroup
+                    className="clickable-toggle-button btn-shadow"
+                    type="radio"
+                    name="period-options"
+                    defaultValue={periodValue}
+                    onChange={value => handlePeriodValue(value)}
+                >
                     <ToggleButton id="tbg-hour" value={'hour'}>
                         Hour
                     </ToggleButton>
@@ -57,7 +63,13 @@ export function ChartsMenu() {
             </div>
             <div>
                 <p className="button-label">Form of payment</p>
-                <ToggleButtonGroup className="clickable-toggle-button" type="radio" name="price-options" defaultValue={formOfPayment} onChange={form => handleFormOfPayment(form)}>
+                <ToggleButtonGroup
+                    className="clickable-toggle-button btn-shadow"
+                    type="radio"
+                    name="price-options"
+                    defaultValue={formOfPayment}
+                    onChange={form => handleFormOfPayment(form)}
+                >
                     <ToggleButton id="tbg-spot" value={'spot'}>
                         Spot Price
                     </ToggleButton>
@@ -68,7 +80,7 @@ export function ChartsMenu() {
             </div>
             <div>
                 <p className="button-label">Marketplace</p>
-                <Button type="button" className="clickable-button" onClick={handleMarketplacesModal}>
+                <Button type="button" className="clickable-button btn-shadow" onClick={handleMarketplacesModal}>
                     {JSON.stringify(selectedMarketplaces) === JSON.stringify(marketplacesReference) ? 'All marketplaces' : 'Not all marketplaces'}
                 </Button>
             </div>
@@ -79,10 +91,12 @@ export function ChartsMenu() {
                 </Modal.Header>
                 <Modal.Body>List Of Marketplaces... ( On Hold )</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleMarketplacesModal}>
+                    <Button className="btn-shadow" variant="secondary" onClick={handleMarketplacesModal}>
                         Cancel
                     </Button>
-                    <Button variant="primary">Confirm</Button>
+                    <Button className="btn-shadow" variant="primary">
+                        Confirm
+                    </Button>
                 </Modal.Footer>
             </Modal>
         </Container>

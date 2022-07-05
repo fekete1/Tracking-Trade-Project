@@ -1,12 +1,11 @@
-import { Form, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
 
-import { BiSearchAlt } from 'react-icons/bi'
 import { AiOutlineExpand, AiOutlinePoweroff } from 'react-icons/ai'
 import { FaBars } from 'react-icons/fa'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { ToggleSideMenuContext } from '../contexts/ToggleSideMenuContext'
 import { ToggleFullScreenContext } from '../contexts/FullScreenContext'
-import { ResultSearch } from './ResultsSearch'
+import { SearchBar } from './SearchBar'
 
 export function TopMenu() {
     const item = {
@@ -23,13 +22,7 @@ export function TopMenu() {
                     <button type="button" className="btn btn-expand-sidebar" onClick={toggleSideMenu}>
                         <FaBars />
                     </button>
-                    <Form>
-                        <span className="search-icon">
-                            <BiSearchAlt />
-                        </span>
-                        <Form.Control type="search" placeholder="Search..." className="search" aria-label="Search" />
-                        <ResultSearch />
-                    </Form>
+                    <SearchBar />
                 </div>
                 <div>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -8,7 +8,7 @@ import '../styles/chart.scss'
 import '../styles/productinfo.scss'
 import '../styles/productoffers.scss'
 import '../styles/chartsmenu.scss'
-import '../styles/resultsearch.scss'
+import '../styles/searchbar.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
