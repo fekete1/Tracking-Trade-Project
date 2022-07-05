@@ -3,9 +3,10 @@
 .result-search-container{
     width:300px;
     max-height:400px;
+    overflow-y: auto;
     background:$bg-auxiliar-color;
 
-    top: 45px;
+    top: 44px;
     position: absolute;
     z-index:1;
 

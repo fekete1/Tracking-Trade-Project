@@ -16,7 +16,6 @@
         background: $button-blue-default-color;
         font: 600 13px sans-serif;
         color: $bg-auxiliar-color;
-        padding: 8px 16px 8px 16px;
 
         &:hover, &:focus{
             background-color: $button-blue-clicked-color;
@@ -24,6 +23,7 @@
     }
 
     option{
+        font: 500 12px Sans-serif;
         text-align: start;
     }
 
@@ -51,13 +51,6 @@
                 color: $auxiliar-text-color;
                 margin: 8px;
             }
-            .btn-price{
-                option{
-                    border-radius: 4px;
-                    display: block;
-                    padding:10px;
-                }
-            }
         }
     }
 
@@ -79,6 +72,11 @@
 
             &:not(:first-child){
                 text-align: center;
+            }
+
+            a{
+                text-decoration: none;
+                color: inherit
             }
         }
     }
