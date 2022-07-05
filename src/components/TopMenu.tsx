@@ -6,6 +6,7 @@ import { FaBars } from 'react-icons/fa'
 import { useContext, useState } from 'react'
 import { ToggleSideMenuContext } from '../contexts/ToggleSideMenuContext'
 import { ToggleFullScreenContext } from '../contexts/FullScreenContext'
+import { ResultSearch } from './ResultsSearch'
 
 export function TopMenu() {
     const item = {
@@ -27,6 +28,7 @@ export function TopMenu() {
                             <BiSearchAlt />
                         </span>
                         <Form.Control type="search" placeholder="Search..." className="search" aria-label="Search" />
+                        <ResultSearch />
                     </Form>
                 </div>
                 <div>
