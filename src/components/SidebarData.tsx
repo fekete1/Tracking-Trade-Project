@@ -5,13 +5,13 @@ export const SidebarData = [
     {
         path: '/dashboard',
         title: 'Dashboard',
-        icon: <BiHomeCircle style={{ marginRight: 10 }} />,
+        icon: <BiHomeCircle />,
         cName: 'nav-text',
     },
     {
         path: '/example',
         title: 'Example',
-        icon: <FaGithubAlt style={{ marginRight: 10 }} />,
+        icon: <FaGithubAlt />,
         cName: 'nav-text',
     },
 ]

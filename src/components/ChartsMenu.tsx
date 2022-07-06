@@ -1,9 +1,22 @@
 import { useState } from 'react'
-import { Button, Container, Modal, ToggleButton, ToggleButtonGroup } from 'react-bootstrap'
+import { Button, Container, ToggleButton, ToggleButtonGroup } from 'react-bootstrap'
 import { ButtonDate } from './ButtonDate'
 import DatePicker from 'react-datepicker'
 
 import 'react-datepicker/dist/react-datepicker.css'
+import { MarketplacesModal } from './MarketplacesModal'
+
+const marketplaces = [
+    'Bom preço',
+    'Walmart',
+    'Mercadinho do seu João',
+    'Americanas',
+    'Varejão Paulista',
+    'Narcizo Enxovais',
+    'Mini Shoping de Areias',
+    'Renner',
+    'Casas Bahia',
+]
 
 export function ChartsMenu() {
     const [periodValue, setPeriodValue] = useState<String>('week')
@@ -59,7 +72,12 @@ export function ChartsMenu() {
             </div>
             <div>
                 <p className="button-label">Date</p>
-                <DatePicker selected={chartsDate} onChange={(newDate: Date) => handleChartsDate(newDate)} dateFormat="yyyy-MM-dd" customInput={<ButtonDateCharts />} />
+                <DatePicker
+                    selected={chartsDate}
+                    onChange={(newDate: Date) => handleChartsDate(newDate)}
+                    dateFormat="yyyy-MM-dd"
+                    customInput={<ButtonDateCharts />}
+                />
             </div>
             <div>
                 <p className="button-label">Form of payment</p>
@@ -81,24 +99,16 @@ export function ChartsMenu() {
             <div>
                 <p className="button-label">Marketplace</p>
                 <Button type="button" className="clickable-button btn-shadow" onClick={handleMarketplacesModal}>
-                    {JSON.stringify(selectedMarketplaces) === JSON.stringify(marketplacesReference) ? 'All marketplaces' : 'Not all marketplaces'}
+                    {JSON.stringify(selectedMarketplaces) === JSON.stringify(marketplacesReference)
+                        ? 'All marketplaces'
+                        : 'Not all marketplaces'}
                 </Button>
             </div>
-
-            <Modal show={modalIsOpen} onHide={handleMarketplacesModal} backdrop="static" keyboard={false}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Marketplaces</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>List Of Marketplaces... ( On Hold )</Modal.Body>
-                <Modal.Footer>
-                    <Button className="btn-shadow" variant="secondary" onClick={handleMarketplacesModal}>
-                        Cancel
-                    </Button>
-                    <Button className="btn-shadow" variant="primary">
-                        Confirm
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+            <MarketplacesModal
+                modalIsOpen={modalIsOpen}
+                handleMarketplacesModal={handleMarketplacesModal}
+                marketplaces={marketplaces}
+            />
         </Container>
     )
 }

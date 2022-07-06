@@ -40,12 +40,11 @@ export function SearchBar({ products, onInputChange }: SearchBarProps) {
     }, [])
 
     return (
-        <Form>
+        <Form id="search-top-menu-container" onSubmit={searchPreventDefault}>
             <span className="search-icon">
                 <BiSearchAlt />
             </span>
             <Form.Control
-                onSubmit={searchPreventDefault}
                 type="search"
                 placeholder="Search..."
                 className="search"
@@ -58,7 +57,12 @@ export function SearchBar({ products, onInputChange }: SearchBarProps) {
                 <ul className="list-group" ref={ulRef}>
                     {products.map((product, index) => {
                         return (
-                            <button type="button" key={index} className="list-group-item list-group-item-action" onClick={() => handleProductSelection(product)}>
+                            <button
+                                type="button"
+                                key={index}
+                                className="list-group-item list-group-item-action"
+                                onClick={() => handleProductSelection(product)}
+                            >
                                 {product}
                             </button>
                         )

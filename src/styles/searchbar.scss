@@ -1,5 +1,33 @@
 @import  "variables";
 
+#search-top-menu-container{
+    display:flex;
+    align-items: center;
+    position: relative;
+
+    .search-icon{
+        position:absolute;
+        left: 10px;
+        margin-bottom: 4px;
+        z-index:2;
+    }
+
+    .search{
+        font: 500 13px Sans-serif;
+        background-color: $bg-primary-color;
+        color: $auxiliar-text-color;
+
+        padding: 6px 8px 6px 28px;
+        border-radius: 16px;
+
+        height:36px;
+        max-width: 180px;
+        width: 100%;
+    }
+
+}
+
+
 .result-search-container{
     width:300px;
     max-height:400px;
@@ -14,3 +42,5 @@
 
     box-shadow: $box-shadow-contrasting
 }
+
+

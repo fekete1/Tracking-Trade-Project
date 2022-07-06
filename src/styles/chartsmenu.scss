@@ -29,7 +29,7 @@
 
     .btn{
         background: $button-blue-default-color;
-        font: 600 13px sans-serif;
+        font: 500 13px sans-serif;
         color: $bg-auxiliar-color;
         padding: 8px 16px 8px 16px;
 
@@ -39,6 +39,14 @@
     }
 
 }
+
+@media screen and (min-width: 768px){
+
+    .clickable-toggle-button{
+        width:240px;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
     #charts-menu-container{

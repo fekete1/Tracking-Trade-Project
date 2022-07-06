@@ -24,7 +24,10 @@ export function ProductInfo() {
                         <p className="product-price">R$ 6.000</p>
                     </span>
                     <div className="product-image">
-                        <img src="https://samsungbr.vtexassets.com/arquivos/ids/331051-800-auto" alt="imagem do produto" />
+                        <img
+                            src="https://samsungbr.vtexassets.com/arquivos/ids/331051-800-auto"
+                            alt="imagem do produto"
+                        />
                     </div>
                 </div>
             </div>

@@ -51,11 +51,20 @@ export function ProductOffers() {
                 <div className="product-offers-menu">
                     <div>
                         <p className="menu-label">Date</p>
-                        <DatePicker selected={date} onChange={(newDate: Date) => toggleOffersDate(newDate)} dateFormat="yyyy-MM-dd" customInput={<ButtonDateOffers />} />
+                        <DatePicker
+                            selected={date}
+                            onChange={(newDate: Date) => toggleOffersDate(newDate)}
+                            dateFormat="yyyy-MM-dd"
+                            customInput={<ButtonDateOffers />}
+                        />
                     </div>
                     <div>
                         <p className="menu-label">Price</p>
-                        <select className="btn btn-price btn-shadow" value={price} onChange={e => togglePriceOption(e.target.value)}>
+                        <select
+                            className="btn btn-price btn-shadow"
+                            value={price}
+                            onChange={e => togglePriceOption(e.target.value)}
+                        >
                             <option value="Mode">Mode</option>
                             <option value="VAR">VAR</option>
                             <option value="RRP">RRP</option>

@@ -13,4 +13,5 @@ services:
             - ./src/assets:/app/assets
             - ./src/components:/app/components
             - ./src/contexts:/app/contexts
+            - ./src/services:/app/services
             - ./next.config.js:/app/next.config.js

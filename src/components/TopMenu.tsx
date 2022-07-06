@@ -43,7 +43,12 @@ export function TopMenu() {
                             <button type="button" className="btn btn-expand-page" onClick={toggleFullScreen}>
                                 <AiOutlineExpand />
                             </button>
-                            <NavDropdown title={item.name} id="basic-nav-dropdown" align="end" className="logout-container">
+                            <NavDropdown
+                                title={item.name}
+                                id="basic-nav-dropdown"
+                                align="end"
+                                className="logout-container"
+                            >
                                 <NavDropdown.Item href="#" className="logout-item">
                                     <span className="logout-icon">
                                         <AiOutlinePoweroff />

@@ -12,5 +12,6 @@ COPY public ./public
 COPY src/styles ./styles
 COPY /src/components ./components
 COPY /src/contexts ./contexts
+COPY /src/services ./services
 
 CMD ["yarn", "dev"]

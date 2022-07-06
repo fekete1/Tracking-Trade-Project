@@ -11,15 +11,22 @@
     box-shadow: $box-shadow;
 
     .btn{
-        display: block;
-        width:100%;
         background: $button-blue-default-color;
-        font: 600 13px sans-serif;
+        font: 500 13px sans-serif;
         color: $bg-auxiliar-color;
 
         &:hover, &:focus{
             background-color: $button-blue-clicked-color;
         }
+
+    }
+
+    .btn-date{
+        padding: 8px 16px 8px 16px;
+    }
+
+    .btn-price{
+        padding: 7px 12px 7px 12px;
     }
 
     option{

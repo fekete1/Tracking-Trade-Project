@@ -9,6 +9,7 @@ import '../styles/productinfo.scss'
 import '../styles/productoffers.scss'
 import '../styles/chartsmenu.scss'
 import '../styles/searchbar.scss'
+import '../styles/marketplacesmodal.scss'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 

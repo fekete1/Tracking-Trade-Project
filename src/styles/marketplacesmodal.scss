@@ -1,0 +1,42 @@
+@import "variables";
+#marketplaces-modal-container{
+
+    .modal-content{
+        width: 400px;
+        ul{
+            margin-top:20px;
+            padding-left: 20px;
+            height:320px;
+            overflow-y: auto;
+        }
+    }
+
+    .modal-header,
+    .modal-footer{
+        border:none;
+    }
+
+
+    .modal-title{
+        font:600 14px sans-serif;
+        color: $auxiliar-text-color;
+
+    }
+
+    .modal-search-icon{
+        position:absolute;
+        left: 24px;
+        margin-top: 2px;
+        z-index:2;
+    }
+
+    .modal-search{
+        font: 500 13px Sans-serif;
+        background-color: $bg-primary-color;
+        color: $auxiliar-text-color;
+
+        padding: 8px 8px 8px 28px;
+        border-radius: 16px;
+
+    }
+}
