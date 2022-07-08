@@ -2,9 +2,10 @@ import { FormEvent, useContext, useEffect, useRef } from 'react'
 import { Form } from 'react-bootstrap'
 import { BiSearchAlt } from 'react-icons/bi'
 import { ToggleSideMenuContext } from '../contexts/ToggleSideMenuContext'
+import { ProductTypes } from './TopMenu'
 
 interface SearchBarProps {
-    products: string[]
+    products: ProductTypes[]
     onInputChange: (value: string) => void
 }
 
@@ -60,10 +61,18 @@ export function SearchBar({ products, onInputChange }: SearchBarProps) {
                             <button
                                 type="button"
                                 key={index}
-                                className="list-group-item list-group-item-action"
-                                onClick={() => handleProductSelection(product)}
+                                className="list-group-item list-group-item-action btn-product-search"
+                                onClick={() => handleProductSelection(product.name)}
                             >
-                                {product}
+                                <div className="btn-product-search-container">
+                                    <div className="btn-image-product">
+                                        <img src={product.pictureUrl} alt="Product image" />
+                                    </div>
+                                    <div className="btn-name-and-brand">
+                                        <span className="btn-product-name">{product.name}</span>
+                                        <span className="btn-product-brand">{product.brand.name}</span>
+                                    </div>
+                                </div>
                             </button>
                         )
                     })}

@@ -23,7 +23,6 @@ $bg-auxiliar-color: #f3f3f8;
             top:0;
 
             li{
-                padding: 4px 0 4px 10px;
                 transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
                 white-space:nowrap;
 
@@ -108,13 +107,18 @@ $bg-auxiliar-color: #f3f3f8;
                 }
             }
 
-            li a{
-                color: $auxiliar-text-color;
-                text-decoration: none;
+            li{
                 width: 100%;
+                text-align: center;
 
-                .page-icon{
-                    font-size:20px;
+                a{
+                    color: $auxiliar-text-color;
+                    text-decoration: none;
+                    width: 100%;
+
+                    .page-icon{
+                        font-size:20px;
+                    }
                 }
             }
         }
