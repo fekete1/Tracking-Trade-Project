@@ -55,11 +55,13 @@
  }
 
  @media screen and (max-width: 767px){
-    .clickable-toggle-button{
-        width:240px;
-    }
-    .clickable-button{
-        width:240px;
+    #charts-menu-container{
+        .clickable-toggle-button{
+            width:240px;
+        }
+        .clickable-button{
+            width:240px;
+        }
     }
  }
 @media screen and (min-width: 768px){
