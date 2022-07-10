@@ -20,6 +20,19 @@ export function ProductOffers() {
         setPrice(value)
         console.log(price)
     }
+
+    function tonalityRed(value: string | null) {
+        if (value === null || parseInt(value) <= 24) {
+            return '#f8d7da'
+        }
+        if (parseInt(value) <= 49) {
+            return '#f1aeb5'
+        }
+        if (parseInt(value) <= 74) {
+            return '#ea868f'
+        }
+        return '#e35d6a'
+    }
     const ButtonDateOffers = ButtonDate
 
     const productInfos = [
@@ -93,9 +106,17 @@ export function ProductOffers() {
                                 <td>{item.marketplace}</td>
                                 <td>{item.presence}</td>
                                 <td>{item.sp === null ? '-' : item.sp}</td>
-                                <td>{item.rrpSp === null ? '0%' : item.rrpSp}</td>
+                                <td>
+                                    <div style={{ backgroundColor: tonalityRed(item.rrpSp) }}>
+                                        {item.rrpSp === null ? '0%' : item.rrpSp}
+                                    </div>
+                                </td>
                                 <td>{item.ip === null ? '-' : item.ip}</td>
-                                <td>{item.rrpIp === null ? '0%' : item.rrpIp}</td>
+                                <td>
+                                    <div style={{ backgroundColor: tonalityRed(item.rrpIp) }}>
+                                        {item.rrpIp === null ? '0%' : item.rrpIp}
+                                    </div>
+                                </td>
                                 <td>
                                     {item.link === null ? (
                                         <BiUnlink />

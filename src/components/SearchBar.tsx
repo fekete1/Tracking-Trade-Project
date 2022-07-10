@@ -21,6 +21,7 @@ export function SearchBar({ products, onInputChange }: SearchBarProps) {
         }
     }
 
+    //Previne o usuário de submeter o formulário
     function searchPreventDefault(event: FormEvent) {
         event.preventDefault()
     }

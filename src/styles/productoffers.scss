@@ -63,10 +63,13 @@
 
     .table{
         margin-top:16px;
+        display: table;
 
         th{
             font: 600 13px Sans-serif;
             color: $auxiliar-text-color;
+            display:table-cell;
+            vertical-align:middle;
 
             &:not(:first-child){
                 text-align: center;
@@ -76,7 +79,18 @@
         td{
             font: 500 12px Sans-serif;
             color: $auxiliar-text-color;
+            height: 30px;
+            display:table-cell;
+            vertical-align:middle;
 
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                height: 100%;
+                border-radius:  4px;
+            }
             &:not(:first-child){
                 text-align: center;
             }
