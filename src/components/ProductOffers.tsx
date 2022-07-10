@@ -21,7 +21,7 @@ export function ProductOffers() {
         console.log(price)
     }
 
-    function tonalityRed(value: string | null) {
+    function handleTonalityRed(value: string | null) {
         if (value === null || parseInt(value) <= 24) {
             return '#f8d7da'
         }
@@ -107,13 +107,13 @@ export function ProductOffers() {
                                 <td>{item.presence}</td>
                                 <td>{item.sp === null ? '-' : item.sp}</td>
                                 <td>
-                                    <div style={{ backgroundColor: tonalityRed(item.rrpSp) }}>
+                                    <div style={{ backgroundColor: handleTonalityRed(item.rrpSp) }}>
                                         {item.rrpSp === null ? '0%' : item.rrpSp}
                                     </div>
                                 </td>
                                 <td>{item.ip === null ? '-' : item.ip}</td>
                                 <td>
-                                    <div style={{ backgroundColor: tonalityRed(item.rrpIp) }}>
+                                    <div style={{ backgroundColor: handleTonalityRed(item.rrpIp) }}>
                                         {item.rrpIp === null ? '0%' : item.rrpIp}
                                     </div>
                                 </td>

@@ -39,4 +39,30 @@
         border-radius: 16px;
 
     }
+
+    .marketplace-search-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:8px;
+        padding:12px;
+
+        input{
+            width: 10px;
+            margin-right:8px;
+        }
+
+
+        .marketplace-image{
+            img{
+                width:40px;
+                height: 40px;
+            }
+        }
+
+        .marketplace-name{
+            font: 600 11px Sans-serif;
+            color: $auxiliar-text-color;
+        }
+    }
 }

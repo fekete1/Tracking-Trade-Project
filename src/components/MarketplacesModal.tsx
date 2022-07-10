@@ -1,8 +1,9 @@
 import { Button, Form, Modal } from 'react-bootstrap'
 import { BiSearchAlt } from 'react-icons/bi'
+import { MarketplaceType } from './ChartsMenu'
 
 interface MarketplacesModalProps {
-    marketplaces: string[]
+    marketplaces: MarketplaceType[]
     modalIsOpen: boolean
     handleMarketplacesModal: () => void
 }
@@ -24,9 +25,19 @@ export function MarketplacesModal({ modalIsOpen, handleMarketplacesModal, market
                     <BiSearchAlt />
                 </span>
                 <Form.Control type="search" placeholder="Search..." className="modal-search" aria-label="Search" />
-                <ul className="list-group">
+                <ul className="list-group marketplaces-list">
                     {marketplaces.map(marketplace => {
-                        return <p>{marketplace}</p>
+                        return (
+                            <label>
+                                <div className="marketplace-search-container">
+                                    <input type="checkbox" checked={marketplace.checked} />
+                                    <div className="marketplace-image">
+                                        <img src={marketplace.pictureUrl} alt="marketplace image" />
+                                    </div>
+                                    <span className="marketplace-name">{marketplace.name}</span>
+                                </div>
+                            </label>
+                        )
                     })}
                 </ul>
             </Modal.Body>
