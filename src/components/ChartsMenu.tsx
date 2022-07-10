@@ -183,7 +183,7 @@ export function ChartsMenu() {
 
     return (
         <Container fluid id="charts-menu-container">
-            <div>
+            <div className="menu-button-section">
                 <p className="button-label">Period</p>
                 <ToggleButtonGroup
                     className="clickable-toggle-button btn-shadow"
@@ -203,7 +203,7 @@ export function ChartsMenu() {
                     </ToggleButton>
                 </ToggleButtonGroup>
             </div>
-            <div>
+            <div className="menu-button-section">
                 <p className="button-label">Date</p>
                 <DatePicker
                     selected={chartsDate}
@@ -212,7 +212,7 @@ export function ChartsMenu() {
                     customInput={<ButtonDateCharts />}
                 />
             </div>
-            <div>
+            <div className="menu-button-section">
                 <p className="button-label">Form of payment</p>
                 <ToggleButtonGroup
                     className="clickable-toggle-button btn-shadow"
@@ -229,7 +229,7 @@ export function ChartsMenu() {
                     </ToggleButton>
                 </ToggleButtonGroup>
             </div>
-            <div>
+            <div className="menu-button-section">
                 <p className="button-label">Marketplace</p>
                 <Button type="button" className="clickable-button btn-shadow" onClick={handleMarketplacesModal}>
                     {JSON.stringify(selectedMarketplaces) === JSON.stringify(marketplacesReference)
