@@ -100,7 +100,7 @@ export function ProductOffers() {
                                     {item.link === null ? (
                                         <BiUnlink />
                                     ) : (
-                                        <a href="//www.google.com">
+                                        <a href={item.link} target="_blank">
                                             <BiLinkExternal />
                                         </a>
                                     )}
