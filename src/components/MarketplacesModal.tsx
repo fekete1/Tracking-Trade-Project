@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap'
 import { BiSearchAlt } from 'react-icons/bi'
 import { MarketplaceType } from './ChartsMenu'
@@ -9,6 +10,8 @@ interface MarketplacesModalProps {
 }
 
 export function MarketplacesModal({ modalIsOpen, handleMarketplacesModal, marketplaces }: MarketplacesModalProps) {
+    const [marketplacesRef, setMarketplacesRef] = useState<MarketplaceType[]>(marketplaces)
+
     return (
         <Modal
             id="marketplaces-modal-container"
@@ -30,7 +33,21 @@ export function MarketplacesModal({ modalIsOpen, handleMarketplacesModal, market
                         return (
                             <label>
                                 <div className="marketplace-search-container">
-                                    <input type="checkbox" checked={marketplace.checked} />
+                                    <input
+                                        type="checkbox"
+                                        checked={marketplace.checked}
+                                        onChange={event => {
+                                            let checked = event.target.checked
+                                            setMarketplacesRef(
+                                                marketplaces.map(data => {
+                                                    if (data.id === marketplace.id) {
+                                                        data.checked = checked
+                                                    }
+                                                    return data
+                                                })
+                                            )
+                                        }}
+                                    />
                                     <div className="marketplace-image">
                                         <img src={marketplace.pictureUrl} alt="marketplace image" />
                                     </div>
