@@ -1,3 +1,4 @@
+import { left } from '@popperjs/core'
 import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -24,6 +25,10 @@ export function LineChart({ chartTitle }: LineChartProps) {
                         reset: false,
                     },
                 },
+            },
+            legend: {
+                position: left,
+                offsetY: 30,
             },
             xaxis: {
                 categories: [
@@ -53,91 +58,32 @@ export function LineChart({ chartTitle }: LineChartProps) {
         },
         series: [
             {
-                dashPriceChart: {
-                    labels: [
-                        '0:00',
-                        '2:00',
-                        '3:00',
-                        '4:00',
-                        '5:00',
-                        '6:00',
-                        '7:00',
-                        '8:00',
-                        '9:00',
-                        '10:00',
-                        '11:00',
-                        '12:00',
-                        '13:00',
-                        '14:00',
-                        '15:00',
-                        '16:00',
-                        '17:00',
-                        '18:00',
-                        '19:00',
-                        '20:00',
-                        '21:00',
-                        '22:00',
-                        '23:00',
-                    ],
-                    data: [
-                        {
-                            name: 'VAR',
-                            type: 'column',
-                            data: [
-                                16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
-                                16,
-                            ],
-                            color: '#0D3B85',
-                            enableDataLabel: true,
-                            dash: 0,
-                        },
-                        {
-                            name: 'RRP',
-                            type: 'line',
-                            data: [
-                                3161, 3161, 3161, 3161, 3161, 3161, 3161, 3161, 3161, 3161, 3161, 3161, 3161, 3161,
-                                3161, 3161, 3161, 3161, 3161, 3161, 3161, 3161, 3161,
-                            ],
-                            color: '#74788D',
-                            enableDataLabel: false,
-                            dash: 3,
-                        },
-                        {
-                            name: 'Mode',
-                            type: 'line',
-                            data: [
-                                3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662,
-                                3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662,
-                            ],
-                            color: '#7fa7e9',
-                            enableDataLabel: true,
-                            dash: 0,
-                        },
-                        {
-                            name: 'Max',
-                            type: 'line',
-                            data: [
-                                4799, 4174, 4799, 4799, 4799, 4799, 4263, 4799, 4799, 4799, 4799, 4263, 4799, 4799,
-                                4799, 4799, 4799, 4799, 4799, 4799, 4489, 4799, 4799,
-                            ],
-                            color: '#2A73E8',
-                            enableDataLabel: true,
-                            dash: 0,
-                        },
-                        {
-                            name: 'Min',
-                            type: 'line',
-                            data: [
-                                3642, 3662, 3662, 3642, 3642, 3642, 3662, 3662, 3642, 3662, 3662, 3662, 3662, 3662,
-                                3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662, 3662,
-                            ],
-                            color: '#F1B44C',
-                            enableDataLabel: true,
-                            dash: 0,
-                        },
-                    ],
-                    maxLine: 4799,
-                },
+                name: 'VAR',
+                type: 'column',
+                data: [
+                    440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160, 440, 505, 414, 671, 227, 413, 201, 352,
+                    752, 320, 257, 16,
+                ],
+            },
+            {
+                name: 'RRP',
+                type: 'line',
+                data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16],
+            },
+            {
+                name: 'Mode',
+                type: 'line',
+                data: [30, 40, 45, 50, 49, 60, 70, 91],
+            },
+            {
+                name: 'Max',
+                type: 'line',
+                data: [72, 32, 56, 65, 86, 32, 7, 43],
+            },
+            {
+                name: 'Min',
+                type: 'line',
+                data: [72, 32, 56, 65, 86, 32, 7, 43],
             },
         ],
     }

@@ -1,3 +1,4 @@
+import { left } from '@popperjs/core'
 import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -19,6 +20,11 @@ export function BarChart({ chartTitle }: BarChartProps) {
                     },
                 },
             },
+            legend: {
+                position: left,
+                offsetY: 40,
+            },
+
             xaxis: {
                 categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
             },
