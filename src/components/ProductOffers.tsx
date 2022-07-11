@@ -23,7 +23,7 @@ export function ProductOffers() {
     }
 
     function handleTonalityRed(value: string | null) {
-        if (value === null) return '#fff'
+        if (value === null) return 'none'
         if (parseInt(value) <= 24) return '#f8d7da'
         if (parseInt(value) <= 49) return '#f1aeb5'
         if (parseInt(value) <= 74) return '#ea868f'
