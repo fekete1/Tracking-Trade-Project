@@ -1,5 +1,6 @@
 import { left } from '@popperjs/core'
 import dynamic from 'next/dynamic'
+import { ToolTipInfo } from '../ToolTipInfo'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 interface HeatMapChartProps {
@@ -42,6 +43,7 @@ export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
         },
         title: {
             text: chartTitle,
+            offsetX: 50,
             style: {
                 fontSize: '14px',
                 fontWeight: 600,
@@ -51,6 +53,7 @@ export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
         },
         subtitle: {
             text: 'Spot price',
+            offsetX: 50,
             offsetY: 20,
             style: {
                 fontSize: '12px',
@@ -67,7 +70,7 @@ export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
             id: 'heatmap-chart',
             toolbar: {
                 show: true,
-                offsetX: 0,
+                offsetX: -760,
                 offsetY: 0,
                 tools: {
                     download: true,
@@ -108,6 +111,9 @@ export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
     }
     return (
         <div className="graphic-container">
+            <span className="tooltip-charts">
+                <ToolTipInfo />
+            </span>
             <Chart options={options} series={series.series} type="heatmap" width="800px" height="220px" />
         </div>
     )

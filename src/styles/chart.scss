@@ -11,5 +11,15 @@
 
     box-shadow: $box-shadow;
 
+    position: relative;
+
+    .tooltip-charts{
+        position: absolute;
+        top: 10;
+        left: 36px;
+
+        z-index: 3;
+    }
+
   }
 

@@ -1,5 +1,6 @@
 import { left } from '@popperjs/core'
 import dynamic from 'next/dynamic'
+import { ToolTipInfo } from '../ToolTipInfo'
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 interface LineChartProps {
@@ -13,7 +14,7 @@ export function LineChart({ chartTitle }: LineChartProps) {
                 id: 'line-chart',
                 toolbar: {
                     show: true,
-                    offsetX: 0,
+                    offsetX: -760,
                     offsetY: 0,
                     tools: {
                         download: true,
@@ -38,6 +39,7 @@ export function LineChart({ chartTitle }: LineChartProps) {
             },
             title: {
                 text: chartTitle,
+                offsetX: 50,
                 style: {
                     fontSize: '14px',
                     fontWeight: 600,
@@ -48,6 +50,7 @@ export function LineChart({ chartTitle }: LineChartProps) {
             subtitle: {
                 text: 'Spot Price',
                 offsetY: 20,
+                offsetX: 50,
                 style: {
                     fontSize: '11px',
                     fontWeight: 600,
@@ -90,6 +93,10 @@ export function LineChart({ chartTitle }: LineChartProps) {
     return (
         <>
             <div className="graphic-container">
+                <span className="tooltip-charts">
+                    <ToolTipInfo />
+                </span>
+
                 <Chart options={state.options} series={state.series} type="line" height="220px" width="800px" />
             </div>
         </>

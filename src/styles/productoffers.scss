@@ -41,9 +41,14 @@
         justify-content: space-between;
 
         .offers-label{
-            font: 600 14px Sans-serif;
-            color: $auxiliar-text-color;
-            margin: 8px;
+            display: flex;
+
+            p{
+                font: 600 14px Sans-serif;
+                color: $auxiliar-text-color;
+                margin: 8px;
+            }
+
         }
 
         .product-offers-menu{

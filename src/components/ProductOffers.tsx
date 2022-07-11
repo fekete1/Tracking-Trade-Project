@@ -6,6 +6,7 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { useState } from 'react'
 import { ButtonDate } from './ButtonDate'
+import { ToolTipInfo } from './ToolTipInfo'
 
 export function ProductOffers() {
     const [date, setDate] = useState(new Date())
@@ -60,6 +61,7 @@ export function ProductOffers() {
             <div className="product-offers-header">
                 <div className="offers-label">
                     <p>Offer</p>
+                    <ToolTipInfo />
                 </div>
                 <div className="product-offers-menu">
                     <div>
