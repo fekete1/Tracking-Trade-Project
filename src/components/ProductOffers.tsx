@@ -1,4 +1,4 @@
-import { Form, Table } from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
 import { BiLinkExternal } from 'react-icons/bi'
 import { BiUnlink } from 'react-icons/bi'
 import DatePicker from 'react-datepicker'
@@ -23,15 +23,10 @@ export function ProductOffers() {
     }
 
     function handleTonalityRed(value: string | null) {
-        if (value === null || parseInt(value) <= 24) {
-            return '#f8d7da'
-        }
-        if (parseInt(value) <= 49) {
-            return '#f1aeb5'
-        }
-        if (parseInt(value) <= 74) {
-            return '#ea868f'
-        }
+        if (value === null) return '#fff'
+        if (parseInt(value) <= 24) return '#f8d7da'
+        if (parseInt(value) <= 49) return '#f1aeb5'
+        if (parseInt(value) <= 74) return '#ea868f'
         return '#e35d6a'
     }
     const ButtonDateOffers = ButtonDate
