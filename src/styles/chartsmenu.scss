@@ -58,7 +58,7 @@
         .menu-button-section{
             width: 100%;
 
-            button, .clickable-toggle-button {
+            .clickable-toggle-button, .clickable-button {
                 width: 100%;
             }
         }
@@ -72,7 +72,7 @@
             flex:1;
             width: 100%;
 
-            button, .clickable-toggle-button {
+            .clickable-toggle-button, .clickable-button {
                 width: 100%;
                 white-space: nowrap
             }

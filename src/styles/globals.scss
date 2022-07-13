@@ -52,6 +52,9 @@ li {
     box-shadow: $box-shadow-button;
 }
 
+.react-datepicker-popper{
+    z-index:999 !important;
+}
 
 //Full Screen style para mostar a barra de rolagem
 body:fullscreen {

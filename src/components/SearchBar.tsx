@@ -1,7 +1,9 @@
+import axios from 'axios'
 import { FormEvent, useContext, useEffect, useRef } from 'react'
 import { Form } from 'react-bootstrap'
 import { BiSearchAlt } from 'react-icons/bi'
 import { ToggleSideMenuContext } from '../contexts/ToggleSideMenuContext'
+import SetCookie from '../hooks/SetCookie'
 import { ProductTypes } from './TopMenu'
 
 interface SearchBarProps {
@@ -19,6 +21,29 @@ export function SearchBar({ products, onInputChange }: SearchBarProps) {
         if (inputRef.current !== null) {
             inputRef.current.value = product
         }
+        SetCookie(
+            '__Secure-next-auth.session-token',
+            'eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoiRGF2aSBWaWxlbGEgZGUgQXJhdWpvIiwiZW1haWwiOiJ0ZXN0ZUBleGFtcGxlLmNvbSIsInN1YiI6ImM5NjgxMWYwLTEzY2QtNGQ0Mi1hMzU0LTA3ZDY2MmE1YTY1OCIsImlkIjoiYzk2ODExZjAtMTNjZC00ZDQyLWEzNTQtMDdkNjYyYTVhNjU4IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjU3NzI0MTAwLCJleHAiOjE2NjAzMTYxMDB9.czTJdzMLwKmo4-fK--SOgWpufOsrmKtfrefDUj7cxVbkL4o4EJpqKNqc8q-lVds5TWGVHkh5rL6ZLyWc2XIFVQ'
+        )
+
+        const options = {
+            method: 'POST',
+            url: 'https://omni-tracking-web-staging.herokuapp.com/graphql',
+            headers: {
+                cookie: '__Secure-next-auth.session-token=eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoiRGF2aSBWaWxlbGEgZGUgQXJhdWpvIiwiZW1haWwiOiJ0ZXN0ZUBleGFtcGxlLmNvbSIsInN1YiI6ImM5NjgxMWYwLTEzY2QtNGQ0Mi1hMzU0LTA3ZDY2MmE1YTY1OCIsImlkIjoiYzk2ODExZjAtMTNjZC00ZDQyLWEzNTQtMDdkNjYyYTVhNjU4IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjU3NzI4MjAzLCJleHAiOjE2NjAzMjAyMDN9.hKrBYynbu_k2UQF0LQBFKEvl00eRngo-TeQR9tvAli0dpBeGMB7YS6H2nSbfY58EDlhIXx9MKNZdirSa223r3g',
+                'Content-Type': 'application/json',
+            },
+            data: '{"query":" {\n  product ( id: "767f0983-bd0a-488d-ab6b-7fb261057ef7" ) {\n    id,\n    name,\n    brand {\n      id\n      name\n    },\n    pictureUrl,\n    lastRatingCount,\n    lastRatingValue\n  }\n}","variables":{}}',
+        }
+
+        axios
+            .request(options)
+            .then(function (response) {
+                console.log(response.data)
+            })
+            .catch(function (error) {
+                console.error(error)
+            })
     }
 
     //Previne o usuário de submeter o formulário

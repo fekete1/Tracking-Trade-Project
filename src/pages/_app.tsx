@@ -18,15 +18,18 @@ import { QueryClientProvider } from 'react-query'
 import { ToggleSideMenuContextProvider } from '../contexts/ToggleSideMenuContext'
 import { ToggleFullScreenContextProvider } from '../contexts/FullScreenContext'
 import { queryClient } from '../services/queryClient'
+import { AuthProvider } from '../contexts/AuthContext'
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <QueryClientProvider client={queryClient}>
-            <ToggleSideMenuContextProvider>
-                <ToggleFullScreenContextProvider>
-                    <Component {...pageProps} />
-                </ToggleFullScreenContextProvider>
-            </ToggleSideMenuContextProvider>
+            <AuthProvider>
+                <ToggleSideMenuContextProvider>
+                    <ToggleFullScreenContextProvider>
+                        <Component {...pageProps} />
+                    </ToggleFullScreenContextProvider>
+                </ToggleSideMenuContextProvider>
+            </AuthProvider>
         </QueryClientProvider>
     )
 }
