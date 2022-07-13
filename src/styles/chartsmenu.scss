@@ -40,6 +40,17 @@
 
 }
 
+
+
+
+//Remove  o Espaçamento extra nas telas menores
+@media screen and (max-width: 768px) {
+    #charts-menu-container{
+        margin-top: 0;
+    }
+}
+
+//Deixa cada botão ocupando uma coluna inteira em telas menores
 @media screen and (max-width: 544px) {
     #charts-menu-container{
         flex-direction: column;
@@ -54,26 +65,18 @@
     }
  }
 
- @media screen and (max-width: 767px){
+//Deixa os botões ocupando a sessão toda do menu dos gráficos em telas maiores
+@media screen and (min-width: 545px) {
     #charts-menu-container{
-        .clickable-toggle-button{
-            width:240px;
-        }
-        .clickable-button{
-            width:240px;
-        }
-    }
- }
-@media screen and (min-width: 768px){
-    #charts-menu-container{
-        .clickable-toggle-button{
-            width:240px;
-        }
-    }
-}
+        .menu-button-section{
+            flex:1;
+            width: 100%;
 
-@media screen and (max-width: 768px) {
-    #charts-menu-container{
-        margin-top: 0;
+            button, .clickable-toggle-button {
+                width: 100%;
+                white-space: nowrap
+            }
+        }
     }
+
 }

@@ -29,9 +29,9 @@ export function MarketplacesModal({ modalIsOpen, handleMarketplacesModal, market
                 </span>
                 <Form.Control type="search" placeholder="Search..." className="modal-search" aria-label="Search" />
                 <ul className="list-group marketplaces-list">
-                    {marketplaces.map(marketplace => {
+                    {marketplaces.map((marketplace, index) => {
                         return (
-                            <label>
+                            <label key={index}>
                                 <div className="marketplace-search-container">
                                     <input
                                         type="checkbox"

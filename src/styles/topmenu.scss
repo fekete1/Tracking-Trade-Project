@@ -34,6 +34,7 @@
     a#basic-nav-dropdown{
         font: 500 14px Sans-serif !important;
         color: $auxiliar-text-color;
+
     }
 
     .logout-item{
@@ -41,6 +42,9 @@
         align-items: center;
         justify-content:flex-start;
 
+        &:focus{
+            background: rgba(0, 0, 0, 0.2)
+        }
         .logout-icon{
             font-size:14px;
             color:red;
