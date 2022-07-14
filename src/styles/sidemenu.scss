@@ -122,11 +122,10 @@ $bg-auxiliar-color: #f3f3f8;
                 }
             }
         }
-
     }
     .children{
-        width: 100%;
-        background: $bg-primary-color;
+    width: 100%;
+    background: $bg-auxiliar-color;
     }
 }
 @media screen and ( max-width: 940px){
