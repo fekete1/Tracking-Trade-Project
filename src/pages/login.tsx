@@ -8,7 +8,6 @@ import { FiLogIn } from 'react-icons/fi'
 import { FaUser } from 'react-icons/fa'
 import { RiLockPasswordFill } from 'react-icons/ri'
 import { AiOutlineEyeInvisible, AiFillEye } from 'react-icons/ai'
-import axios from 'axios'
 
 const Login: NextPage = () => {
     const [isHidePassword, setIsHidePassword] = useState(false)

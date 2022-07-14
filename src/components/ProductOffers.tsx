@@ -10,7 +10,7 @@ import { ToolTipInfo } from './ToolTipInfo'
 
 export function ProductOffers() {
     const [date, setDate] = useState(new Date())
-    const [price, setPrice] = useState<string>('Min')
+    const [price, setPrice] = useState<string>('Mode')
 
     function toggleOffersDate(newDate: Date) {
         setDate(newDate)
@@ -76,10 +76,8 @@ export function ProductOffers() {
                             onChange={e => togglePriceOption(e.target.value)}
                         >
                             <option value="Mode">Mode</option>
-                            <option value="VAR">VAR</option>
-                            <option value="RRP">RRP</option>
-                            <option value="Max">Max</option>
-                            <option value="Min">Min</option>
+                            <option value="Minimum">Min</option>
+                            <option value="Maximum">Max</option>
                         </select>
                     </div>
                 </div>

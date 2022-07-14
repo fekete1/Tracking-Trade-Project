@@ -6,6 +6,7 @@ import { useContext, useState } from 'react'
 import { ToggleSideMenuContext } from '../contexts/ToggleSideMenuContext'
 import { ToggleFullScreenContext } from '../contexts/FullScreenContext'
 import { SearchBar } from './SearchBar'
+import { AuthContext } from '../contexts/AuthContext'
 
 type BrandTypes = {
     id: string
@@ -223,6 +224,8 @@ export function TopMenu() {
 
     const [products, setProducts] = useState<ProductTypes[]>([])
 
+    const { signOut } = useContext(AuthContext)
+
     function onInputChange(value: string) {
         setProducts(
             defaultProducts.filter(
@@ -255,7 +258,7 @@ export function TopMenu() {
                                 align="end"
                                 className="logout-container"
                             >
-                                <NavDropdown.Item href="#" className="logout-item">
+                                <NavDropdown.Item href="#" className="logout-item" onClick={signOut}>
                                     <span className="logout-icon">
                                         <AiOutlinePoweroff />
                                     </span>

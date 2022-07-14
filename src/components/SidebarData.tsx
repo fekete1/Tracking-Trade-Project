@@ -9,8 +9,8 @@ export const SidebarData = [
         cName: 'nav-text',
     },
     {
-        path: '/example',
-        title: 'Example',
+        path: '/github',
+        title: 'Github',
         icon: <FaGithubAlt />,
         cName: 'nav-text',
     },

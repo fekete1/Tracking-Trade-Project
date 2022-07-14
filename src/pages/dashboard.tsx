@@ -12,7 +12,6 @@ import { ProductOffers } from '../components/ProductOffers'
 import { SideMenu } from '../components/SideMenu'
 import { TopMenu } from '../components/TopMenu'
 import axios from 'axios'
-import SetCookie from '../hooks/SetCookie'
 
 type TopMenuProps = {
     user: string
@@ -22,7 +21,7 @@ const Dashboard: NextPage<TopMenuProps> = ({ user }: TopMenuProps) => {
         <SSRProvider>
             <>
                 <Head>
-                    <title>Bem vindo {user}</title>
+                    <title>Dashboard</title>
                 </Head>
 
                 <SideMenu>
