@@ -258,15 +258,19 @@ export function TopMenu({ searchIsDisabled }: TopMenuProps) {
                     <Flex alignItems="center" gap={3}>
                         <Avatar size="xs" name={item.name} src="" />
                         <Menu>
-                            <MenuButton transition="all 0.2s" _expanded={{ bg: 'white.100' }}>
+                            <MenuButton
+                                transition="all 0.2s"
+                                _expanded={{ bg: 'white.100' }}
+                                className="btn-username-menu"
+                            >
                                 <Flex alignItems="center" gap={1}>
                                     <Text className="username-text"> {item.name} </Text>
                                     <GoChevronDown size={8} />
                                 </Flex>
                             </MenuButton>
                             <MenuList zIndex="999" fontSize="14px" minWidth="120px">
-                                <MenuItem onClick={signOut}>
-                                    <Flex className="logout-item" alignItems="center" justifyContent="flex-end">
+                                <MenuItem onClick={signOut} className="logout-menu-item">
+                                    <Flex className="logout-container" alignItems="center" justifyContent="flex-end">
                                         <span className="logout-icon">
                                             <AiOutlinePoweroff />
                                         </span>
