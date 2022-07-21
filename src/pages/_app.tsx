@@ -1,5 +1,6 @@
 import '../styles/globals.scss'
 import '../styles/login.scss'
+import '../styles/dashboard.scss'
 
 import '../styles/sidemenu.scss'
 import '../styles/topmenu.scss'

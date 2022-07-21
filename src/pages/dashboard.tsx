@@ -44,28 +44,64 @@ const Dashboard: NextPage<TopMenuProps> = ({ user }: TopMenuProps) => {
                                 </Flex>
                                 <Flex width="100%" flexDirection="column" gap={3}>
                                     <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} spacing={3}>
-                                        <Box width="100%" py={3} px={2} borderRadius="4px" bgColor="white">
+                                        <Box
+                                            width="100%"
+                                            py={3}
+                                            px={2}
+                                            borderRadius="4px"
+                                            className="dashboard-chart-container"
+                                        >
                                             <LineChart chartTitle="Price" />
                                         </Box>
-                                        <Box width="100%" py={3} px={2} borderRadius="4px" bgColor="white">
+                                        <Box
+                                            width="100%"
+                                            py={3}
+                                            px={2}
+                                            borderRadius="4px"
+                                            className="dashboard-chart-container"
+                                        >
                                             <LineChart chartTitle="Price P2P" />
                                         </Box>
                                     </SimpleGrid>
 
                                     <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} spacing={3}>
-                                        <Box width="100%" py={3} px={2} borderRadius="4px" bgColor="white">
+                                        <Box
+                                            width="100%"
+                                            py={3}
+                                            px={2}
+                                            borderRadius="4px"
+                                            className="dashboard-chart-container"
+                                        >
                                             <HeatMapChart chartTitle="Temperature" />
                                         </Box>
-                                        <Box width="100%" py={3} px={2} borderRadius="4px" bgColor="white">
+                                        <Box
+                                            width="100%"
+                                            py={3}
+                                            px={2}
+                                            borderRadius="4px"
+                                            className="dashboard-chart-container"
+                                        >
                                             <HeatMapChart chartTitle="Temperature P2P" />
                                         </Box>
                                     </SimpleGrid>
 
                                     <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} spacing={3}>
-                                        <Box width="100%" py={3} px={2} borderRadius="4px" bgColor="white">
+                                        <Box
+                                            width="100%"
+                                            py={3}
+                                            px={2}
+                                            borderRadius="4px"
+                                            className="dashboard-chart-container"
+                                        >
                                             <BarChart chartTitle="Presence" />
                                         </Box>
-                                        <Box width="100%" py={3} px={2} borderRadius="4px" bgColor="white">
+                                        <Box
+                                            width="100%"
+                                            py={3}
+                                            px={2}
+                                            borderRadius="4px"
+                                            className="dashboard-chart-container"
+                                        >
                                             <BarChart chartTitle="Presence P2P" />
                                         </Box>
                                     </SimpleGrid>
