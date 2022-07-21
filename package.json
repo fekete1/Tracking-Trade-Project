@@ -30,7 +30,6 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/bootstrap": "^5.1.12",
     "@types/js-cookie": "^3.0.2",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.14",

@@ -6,7 +6,7 @@ import { ToggleSideMenuContext } from '../contexts/ToggleSideMenuContext'
 import { ToggleFullScreenContext } from '../contexts/FullScreenContext'
 import { SearchBar } from './SearchBar'
 import { AuthContext } from '../contexts/AuthContext'
-import { Avatar, Box, Flex, Menu, MenuButton, MenuItem, MenuList, Text } from '@chakra-ui/react'
+import { Avatar, Flex, Menu, MenuButton, MenuItem, MenuList, Text } from '@chakra-ui/react'
 
 type BrandTypes = {
     id: string
