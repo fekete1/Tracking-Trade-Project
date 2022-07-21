@@ -36,7 +36,7 @@ Esse projeto tem como foco avaliar o nível de conhecimento no desenvolvimento d
 
 ## Implantação em produção
 - Vercel
-(https://tracking-trade-project.vercel.app/login)
+(https://tracking-trade-project.vercel.app)
 
 # Principais Funcionalidades da Aplicação
 - Login e Logout da aplicação
