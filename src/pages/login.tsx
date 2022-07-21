@@ -6,7 +6,7 @@ import { FiLogIn } from 'react-icons/fi'
 import { FaUser } from 'react-icons/fa'
 import { RiLockPasswordFill } from 'react-icons/ri'
 import { AiOutlineEyeInvisible, AiFillEye } from 'react-icons/ai'
-import { Button, Flex, Grid, GridItem } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, GridItem } from '@chakra-ui/react'
 
 const Login: NextPage = () => {
     const [isHidePassword, setIsHidePassword] = useState(false)
@@ -59,31 +59,36 @@ const Login: NextPage = () => {
                     <p className="separator">Entre em uma conta para continuar</p>
 
                     <form onSubmit={handleLogin} action="/dashboard" method="post">
-                        <label>
-                            <FaUser size={20} />
-                        </label>
-                        <input
-                            type="text"
-                            placeholder="login"
-                            name="login"
-                            onChange={event => setEmail(event.target.value)}
-                        />
+                        <Flex direction="column" gap={3}>
+                            <Box>
+                                <label>
+                                    <FaUser size={20} />
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="login"
+                                    name="login"
+                                    onChange={event => setEmail(event.target.value)}
+                                />
+                            </Box>
+                            <Box>
+                                <label>
+                                    <RiLockPasswordFill size={20} />
+                                </label>
+                                <div className="password-area">
+                                    <input
+                                        type={isHidePassword ? 'text' : 'password'}
+                                        placeholder="senha"
+                                        name="password"
+                                        onChange={event => setPassword(event.target.value)}
+                                    />
 
-                        <label>
-                            <RiLockPasswordFill size={20} />
-                        </label>
-                        <div className="password-area">
-                            <input
-                                type={isHidePassword ? 'text' : 'password'}
-                                placeholder="senha"
-                                name="password"
-                                onChange={event => setPassword(event.target.value)}
-                            />
-
-                            <button type="button" className="btn-hide-password" onClick={toggleHidePassword}>
-                                {isHidePassword ? <AiOutlineEyeInvisible /> : <AiFillEye />}
-                            </button>
-                        </div>
+                                    <button type="button" className="btn-hide-password" onClick={toggleHidePassword}>
+                                        {isHidePassword ? <AiOutlineEyeInvisible /> : <AiFillEye />}
+                                    </button>
+                                </div>
+                            </Box>
+                        </Flex>
 
                         <Button type="submit" className="login-submit">
                             <FiLogIn style={{ margin: 4 }} />
