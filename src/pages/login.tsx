@@ -72,7 +72,6 @@ const Login: NextPage = () => {
                         <label>
                             <RiLockPasswordFill size={20} />
                         </label>
-
                         <div className="password-area">
                             <input
                                 type={isHidePassword ? 'text' : 'password'}
