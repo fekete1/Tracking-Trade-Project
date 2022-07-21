@@ -1,7 +1,7 @@
 
 
 # Tracking Trade Project
-Este é um projeto [Next.js](https://nextjs.org/) com boostrap criado com [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Este é um projeto [Next.js](https://nextjs.org/) com Chakra Ui criado com [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 <hr>
 <h4 align="center"> 
@@ -10,7 +10,8 @@ Este é um projeto [Next.js](https://nextjs.org/) com boostrap criado com [`crea
 <hr>
 
 ### Layout Dashboard Web
-![image](https://user-images.githubusercontent.com/39523817/179016623-2a3d6dc5-9390-41e1-bea9-fe8b594afed9.png)
+![image](https://user-images.githubusercontent.com/39523817/180320051-ddc89bd3-65ed-48aa-97af-7678b7e921f5.png)
+
 
 # Sobre o projeto
 Esse projeto tem como foco avaliar o nível de conhecimento no desenvolvimento de tarefas utilizando as principais tecnologias de desenvolvimento desejada pela empresa Tracking Trade, utilizando uma API já estabelecida pela mesma.
@@ -20,7 +21,7 @@ Esse projeto tem como foco avaliar o nível de conhecimento no desenvolvimento d
 - NextJs
 - ReactJs
 - Typescript
-- Bootstrap
+- Chakra Ui
 - ApexCharts
 - Docker
 - Sass
@@ -43,7 +44,7 @@ Esse projeto tem como foco avaliar o nível de conhecimento no desenvolvimento d
 - Visualizar informações dos produtos de acordo com os filtros selecionados
 
 ### Layout Login Web
-![image](https://user-images.githubusercontent.com/39523817/179017884-7edeeefc-9c90-4ec5-84ca-a229911db8a5.png)
+![image](https://user-images.githubusercontent.com/39523817/180321005-f82c81ab-9925-4bde-8675-163ca8d2fe72.png)
 
 
 # Como Executar o projeto
