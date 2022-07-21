@@ -112,7 +112,7 @@ export function HeatMapChart({ chartTitle }: HeatMapChartProps) {
     return (
         <div className="graphic-container">
             <span className="tooltip-charts">
-                <ToolTipInfo />
+                <ToolTipInfo tooltipText="Alguma informação do gráfico de Temperatura" />
             </span>
             <Chart options={options} series={series.series} type="heatmap" width="800px" height="220px" />
         </div>

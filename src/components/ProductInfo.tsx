@@ -1,5 +1,7 @@
+import { Box, Flex } from '@chakra-ui/react'
 import { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
+import { ToolTipInfo } from './ToolTipInfo'
 
 export function ProductInfo() {
     const [rating, setRating] = useState(0) // initial rating value
@@ -11,29 +13,29 @@ export function ProductInfo() {
     }
 
     return (
-        <div id="product-info-main-container">
-            <div className="product-first-section">
-                <div>
+        <Box width="100%" borderRadius="4px" id="product-info-main-container">
+            <Box className="product-first-section">
+                <Box>
                     <p className="product-name white-text"> S22 (200g) </p>
                     <p className="product-brand white-text"> Samsung</p>
-                </div>
+                </Box>
 
-                <div className="price-and-image">
+                <Box className="price-and-image">
                     <span className="product-price-section white-text">
                         <p className="product-price-label">RRP: </p>
                         <p className="product-price">R$ 6.000</p>
                     </span>
-                    <div className="product-image">
+                    <Box className="product-image">
                         <img
                             src="https://samsungbr.vtexassets.com/arquivos/ids/331051-800-auto"
                             alt="imagem do produto"
                         />
-                    </div>
-                </div>
-            </div>
+                    </Box>
+                </Box>
+            </Box>
 
-            <div className="product-second-section">
-                <div className="rating-section">
+            <Flex className="product-second-section">
+                <Flex className="rating-section" gap="2px" alignItems="center">
                     <span className="rating-label gray-text">Rating: </span>
                     <Rating
                         onClick={handleRating}
@@ -45,12 +47,15 @@ export function ProductInfo() {
                         emptyColor="gray"
                         className="rating" // Will remove the inline style if applied
                     />
-                </div>
-                <div className="last-scraping gray-text">
+                    <span className="product-offers-tooltip">
+                        <ToolTipInfo tooltipText="Alguma informação das informações do produto" />
+                    </span>
+                </Flex>
+                <Box className="last-scraping gray-text">
                     <span className="last-scraping-label">last-scraping: </span>
                     <span>2022-30-06 9:03 AM</span>
-                </div>
-            </div>
-        </div>
+                </Box>
+            </Flex>
+        </Box>
     )
 }

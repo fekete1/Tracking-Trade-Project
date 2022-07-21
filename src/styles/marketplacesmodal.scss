@@ -1,14 +1,12 @@
 @import "variables";
+
 #marketplaces-modal-container{
 
-    .modal-content{
-        width: 400px;
-        ul{
-            margin-top:20px;
-            padding-left: 20px;
-            height:60vh;
-            overflow-y: auto;
-        }
+    ul{
+        margin-top:20px;
+        padding-left: 20px;
+        height:56vh;
+        overflow-y: auto;
     }
 
     .modal-header,
@@ -16,28 +14,29 @@
         border:none;
     }
 
-
     .modal-title{
         font:600 14px sans-serif;
         color: $auxiliar-text-color;
+    }
 
+    .modal-search-container{
+        position:relative;
     }
 
     .modal-search-icon{
         position:absolute;
-        left: 24px;
-        margin-top: 2px;
+        left: -2px;
+        top: -2px;
         z-index:2;
     }
 
     .modal-search{
         font: 500 13px Sans-serif;
-        background-color: $bg-primary-color;
+        background-color: $bg-auxiliar-color;
         color: $auxiliar-text-color;
 
         padding: 8px 8px 8px 28px;
         border-radius: 16px;
-
     }
 
     .marketplace-search-container{
@@ -47,7 +46,7 @@
         gap:8px;
         padding:12px;
 
-        input{
+        .modal-checkbox{
             width: 10px;
             margin-right:8px;
         }

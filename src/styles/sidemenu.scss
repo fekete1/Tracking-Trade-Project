@@ -1,14 +1,6 @@
 @import "variables";
 
-$side-menu-color:#2a3042;
-$auxiliar-text-color: #656c82;
-$bg-primary-color: #FFF;
-$bg-auxiliar-color: #f3f3f8;
-
 #sidebar-main-container{
-    display:flex;
-    margin:0;
-    padding: 0;
 
     .sidebar{
         background:$side-menu-color;
@@ -31,11 +23,13 @@ $bg-auxiliar-color: #f3f3f8;
                     transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
                     background: rgba(0, 0, 0, 0.2);
                 }
+                .page-icon{
+                    font-size:18px;
+                }
             }
         }
-
     }
-
+    /// Expanded Menu Style///
     .sidebar-expanded{
         width: 180px;
 
@@ -44,7 +38,7 @@ $bg-auxiliar-color: #f3f3f8;
             padding-top: 60px;
 
             .menu-label{
-                font: 600 11px Sans-serif;
+                font: 600 10px Sans-serif;
                 text-transform: uppercase;
                 color: $auxiliar-text-color;
 
@@ -54,34 +48,31 @@ $bg-auxiliar-color: #f3f3f8;
                 border-right: 4px solid transparent;
             }
 
-
             .active{
                 border-right: 4px solid $bg-primary-color;
                 background: rgba(0, 0, 0, 0.15);
             }
 
-            li{
-                padding: 4px 0 4px 10px;
-            }
-
             li a{
+                padding: 4px 0 4px 16px;
                 color: $bg-primary-color;
                 text-decoration: none;
-                display: inline-block;
+                display:flex;
+                align-items: center;
                 width: 100%;
 
                 .page-icon{
-                    font-size:20px;
-                    margin-right:8px;
+                    padding-right:8px;
                 }
 
                 .page-title{
-                    font: 500 13px Sans-serif;
+                    font: 500 11px Sans-serif;
                 }
             }
         }
     }
 
+    /// Compressed Menu Style///
     .sidebar-compressed{
         width:46px;
 
@@ -89,6 +80,7 @@ $bg-auxiliar-color: #f3f3f8;
             display:none;
             overflow: hidden;
         }
+
         .page-title{
             display:none;
             overflow: hidden;
@@ -115,10 +107,6 @@ $bg-auxiliar-color: #f3f3f8;
                     color: $auxiliar-text-color;
                     text-decoration: none;
                     width: 100%;
-
-                    .page-icon{
-                        font-size:20px;
-                    }
                 }
             }
         }
@@ -129,6 +117,8 @@ $bg-auxiliar-color: #f3f3f8;
         background: $bg-primary-color;
     }
 }
+
+///Full Screen Menu for Mobile Devices
 @media screen and ( max-width: 940px){
     #sidebar-main-container{
 

@@ -1,13 +1,12 @@
-import { Col, Container, Row, SSRProvider } from 'react-bootstrap'
 import { FormEvent, useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Router from 'next/router'
 
 import { FiLogIn } from 'react-icons/fi'
 import { FaUser } from 'react-icons/fa'
 import { RiLockPasswordFill } from 'react-icons/ri'
 import { AiOutlineEyeInvisible, AiFillEye } from 'react-icons/ai'
+import { Button, Flex, Grid, GridItem } from '@chakra-ui/react'
 
 const Login: NextPage = () => {
     const [isHidePassword, setIsHidePassword] = useState(false)
@@ -27,66 +26,74 @@ const Login: NextPage = () => {
     }
 
     return (
-        <SSRProvider>
-            <div>
-                <Head>
-                    <title>Login</title>
-                </Head>
+        <>
+            <Head>
+                <title>Login</title>
+            </Head>
 
-                <Container fluid className="" id="login-main-container">
-                    <Row>
-                        <Col lg="6" className="d-none d-lg-flex" id="login-aside-section">
-                            <div className="login-aside-content">
-                                <img src="/assets/analyze-2.jpg" alt="Ilustração de dados" />
-                                <div className="login-aside-text">
-                                    <strong>Tenha controle dos dados da sua empresa</strong>
-                                    <p>Observando precisamente os dados dos seus produtos</p>
-                                </div>
-                            </div>
-                        </Col>
+            <Grid templateColumns="repeat(2, 1fr)" height="100vh" width="100vw" id="login-main-container">
+                <GridItem
+                    colSpan={{ base: 0, md: 1, lg: 1 }}
+                    height="100vh"
+                    width="100%"
+                    display={{ base: 'none', md: 'flex' }}
+                    id="login-aside-section"
+                >
+                    <Flex className="login-aside-content">
+                        <img src="/assets/analyze-2.jpg" alt="Ilustração de dados" />
+                        <div className="login-aside-text">
+                            <strong>Tenha controle dos dados da sua empresa</strong>
+                            <p>Observando precisamente os dados dos seus produtos</p>
+                        </div>
+                    </Flex>
+                </GridItem>
 
-                        <Col lg="6" className="" id="login-auth-section">
-                            <h1>Faça login</h1>
-                            <p className="separator">Entre em uma conta para continuar</p>
+                <GridItem
+                    colSpan={{ base: 2, md: 1, lg: 1 }}
+                    display="flex"
+                    height="100vh"
+                    width="100%"
+                    id="login-auth-section"
+                >
+                    <h1>Faça login</h1>
+                    <p className="separator">Entre em uma conta para continuar</p>
 
-                            <form onSubmit={handleLogin} action="/dashboard" method="post">
-                                <label>
-                                    <FaUser size={20} />
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="login"
-                                    name="login"
-                                    onChange={event => setEmail(event.target.value)}
-                                />
+                    <form onSubmit={handleLogin} action="/dashboard" method="post">
+                        <label>
+                            <FaUser size={20} />
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="login"
+                            name="login"
+                            onChange={event => setEmail(event.target.value)}
+                        />
 
-                                <label>
-                                    <RiLockPasswordFill size={20} />
-                                </label>
+                        <label>
+                            <RiLockPasswordFill size={20} />
+                        </label>
 
-                                <div className="password-area">
-                                    <input
-                                        type={isHidePassword ? 'text' : 'password'}
-                                        placeholder="senha"
-                                        name="password"
-                                        onChange={event => setPassword(event.target.value)}
-                                    />
+                        <div className="password-area">
+                            <input
+                                type={isHidePassword ? 'text' : 'password'}
+                                placeholder="senha"
+                                name="password"
+                                onChange={event => setPassword(event.target.value)}
+                            />
 
-                                    <button type="button" className="btn-hide-password" onClick={toggleHidePassword}>
-                                        {isHidePassword ? <AiOutlineEyeInvisible /> : <AiFillEye />}
-                                    </button>
-                                </div>
+                            <button type="button" className="btn-hide-password" onClick={toggleHidePassword}>
+                                {isHidePassword ? <AiOutlineEyeInvisible /> : <AiFillEye />}
+                            </button>
+                        </div>
 
-                                <button type="submit" className="login-submit">
-                                    <FiLogIn style={{ margin: 4 }} />
-                                    Entrar
-                                </button>
-                            </form>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-        </SSRProvider>
+                        <Button type="submit" className="login-submit">
+                            <FiLogIn style={{ margin: 4 }} />
+                            Entrar
+                        </Button>
+                    </form>
+                </GridItem>
+            </Grid>
+        </>
     )
 }
 

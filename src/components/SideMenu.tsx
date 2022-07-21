@@ -1,6 +1,7 @@
+import { Flex } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { ReactElement, useContext, useState } from 'react'
+import { ReactElement, useContext } from 'react'
 
 import { ToggleSideMenuContext } from '../contexts/ToggleSideMenuContext'
 import { SidebarData } from './SidebarData'
@@ -13,7 +14,7 @@ export function SideMenu({ children }: SideMenuProps) {
     const router = useRouter()
 
     return (
-        <div id="sidebar-main-container">
+        <Flex m={0} p={0} id="sidebar-main-container">
             <nav className={sideMenuIsOpen ? 'sidebar sidebar-expanded' : 'sidebar sidebar-compressed'}>
                 <ul>
                     <span className="menu-label">menu</span>
@@ -21,7 +22,7 @@ export function SideMenu({ children }: SideMenuProps) {
                         return (
                             <li key={index} className={router.pathname == item.path ? 'active' : ''}>
                                 <Link href={item.path}>
-                                    <a>
+                                    <a className="link-nav">
                                         <span className="page-icon">{item.icon}</span>
                                         <span className="page-title">{item.title}</span>
                                     </a>
@@ -32,6 +33,6 @@ export function SideMenu({ children }: SideMenuProps) {
                 </ul>
             </nav>
             <main className="children">{children}</main>
-        </div>
+        </Flex>
     )
 }

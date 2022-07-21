@@ -1,18 +1,16 @@
-import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { Tooltip } from '@chakra-ui/react'
 import { AiOutlineQuestionCircle } from 'react-icons/ai'
 
-export function ToolTipInfo() {
-    const renderTooltip = (props: any) => (
-        <Tooltip id="button-tooltip" {...props}>
-            Algum texto aqui
-        </Tooltip>
-    )
+interface ToolTipInfoProps {
+    tooltipText: string
+}
 
+export function ToolTipInfo({ tooltipText }: ToolTipInfoProps) {
     return (
-        <OverlayTrigger placement="right" overlay={renderTooltip}>
-            <span className="tooltip-icon">
-                <AiOutlineQuestionCircle size={16} />
-            </span>
-        </OverlayTrigger>
+        <span>
+            <Tooltip label={tooltipText} hasArrow arrowSize={6} shouldWrapChildren textAlign="center">
+                <AiOutlineQuestionCircle size={14} color="#656c82" />
+            </Tooltip>
+        </span>
     )
 }
