@@ -65,7 +65,7 @@ export function BarChart({ chartTitle }: BarChartProps) {
     return (
         <div className="graphic-container">
             <span className="tooltip-charts">
-                <ToolTipInfo />
+                <ToolTipInfo tooltipText="Alguma informação do gráfico de Linhas e Colunas" />
             </span>
             <Chart options={options.options} series={series.series} type="bar" height="220px" width="800px" />
         </div>

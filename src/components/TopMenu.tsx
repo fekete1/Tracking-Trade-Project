@@ -1,5 +1,4 @@
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
-
+import { GoChevronDown } from 'react-icons/go'
 import { AiOutlineExpand, AiOutlinePoweroff } from 'react-icons/ai'
 import { FaBars } from 'react-icons/fa'
 import { useContext, useState } from 'react'
@@ -7,6 +6,7 @@ import { ToggleSideMenuContext } from '../contexts/ToggleSideMenuContext'
 import { ToggleFullScreenContext } from '../contexts/FullScreenContext'
 import { SearchBar } from './SearchBar'
 import { AuthContext } from '../contexts/AuthContext'
+import { Avatar, Box, Flex, Menu, MenuButton, MenuItem, MenuList, Text } from '@chakra-ui/react'
 
 type BrandTypes = {
     id: string
@@ -18,6 +18,10 @@ export type ProductTypes = {
     name: string
     brand: BrandTypes
     pictureUrl: string
+}
+
+interface TopMenuProps {
+    searchIsDisabled: boolean
 }
 
 const defaultProducts: ProductTypes[] = [
@@ -214,7 +218,7 @@ const defaultProducts: ProductTypes[] = [
             'https://firebasestorage.googleapis.com/v0/b/omni-tracking-5fa23.appspot.com/o/products_images%2Fpnq1Iha7-Foto.webp?alt=media&token=4c52cb84-aa7f-4b8a-84c2-bd25aed678bc',
     },
 ]
-export function TopMenu() {
+export function TopMenu({ searchIsDisabled }: TopMenuProps) {
     const item = {
         name: 'Xeldu ',
     }
@@ -237,38 +241,47 @@ export function TopMenu() {
     }
 
     return (
-        <Navbar bg="light" sticky="top" id="top-menu-main-container">
-            <div className="top-menu-content">
-                <div className="search-section">
+        <nav id="top-menu-main-container">
+            <Flex width="100%" justifyContent="space-between" className="top-menu-content">
+                <Flex gap="10px" className="search-section">
                     <button type="button" className="btn btn-expand-sidebar" onClick={toggleSideMenu}>
                         <FaBars />
                     </button>
-                    <SearchBar products={products} onInputChange={onInputChange} />
-                </div>
-                <div>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="">
-                            <button type="button" className="btn btn-expand-page" onClick={toggleFullScreen}>
-                                <AiOutlineExpand />
-                            </button>
-                            <NavDropdown
-                                title={item.name}
-                                id="basic-nav-dropdown"
-                                align="end"
-                                className="logout-container"
+                    <SearchBar products={products} onInputChange={onInputChange} searchIsDisabled={searchIsDisabled} />
+                </Flex>
+
+                <Flex alignItems="center" gap="10px">
+                    <button type="button" className="btn btn-expand-page" onClick={toggleFullScreen}>
+                        <AiOutlineExpand />
+                    </button>
+
+                    <Flex alignItems="center" gap={3}>
+                        <Avatar size="xs" name={item.name} src="" />
+                        <Menu>
+                            <MenuButton
+                                transition="all 0.2s"
+                                _expanded={{ bg: 'white.100' }}
+                                className="btn-username-menu"
                             >
-                                <NavDropdown.Item href="#" className="logout-item" onClick={signOut}>
-                                    <span className="logout-icon">
-                                        <AiOutlinePoweroff />
-                                    </span>
-                                    <span className="logout-text">Logout</span>
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
-                    </Navbar.Collapse>
-                </div>
-            </div>
-        </Navbar>
+                                <Flex alignItems="center" gap={1}>
+                                    <Text className="username-text"> {item.name} </Text>
+                                    <GoChevronDown size={8} />
+                                </Flex>
+                            </MenuButton>
+                            <MenuList zIndex="999" fontSize="14px" minWidth="120px">
+                                <MenuItem onClick={signOut} className="logout-menu-item">
+                                    <Flex className="logout-container" alignItems="center" justifyContent="flex-end">
+                                        <span className="logout-icon">
+                                            <AiOutlinePoweroff />
+                                        </span>
+                                        <Text className="logout-text">Logout</Text>
+                                    </Flex>
+                                </MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </Flex>
+                </Flex>
+            </Flex>
+        </nav>
     )
 }

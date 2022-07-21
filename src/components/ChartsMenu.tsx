@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Button, Container, ToggleButton, ToggleButtonGroup } from 'react-bootstrap'
+import { Button, Box } from '@chakra-ui/react'
 import { ButtonDate } from './ButtonDate'
-import DatePicker from 'react-datepicker'
 
+import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+
 import { MarketplacesModal } from './MarketplacesModal'
+import { RadioGroup } from './RadioGroup'
 
 export type MarketplaceType = {
     id: string
@@ -150,9 +152,11 @@ function uncheckAllMarketplaces(marketplaces: MarketplaceType[]) {
 export function ChartsMenu() {
     const [periodValue, setPeriodValue] = useState<String>('week')
     const [chartsDate, setChartsDate] = useState(new Date())
-    const [formOfPayment, setFormOfPayment] = useState<String>('spot')
+    const [formOfPayment, setFormOfPayment] = useState<String>('spot_price')
     const [selectedMarketplaces, setSelectedMarketplaces] = useState([])
     const [modalIsOpen, setModalIsOpen] = useState(false)
+
+    const ButtonDateCharts = ButtonDate
 
     const marketplacesReference: MarketplaceType[] = [] //TODO requisição de todos os marketplaces
 
@@ -164,8 +168,6 @@ export function ChartsMenu() {
         setPeriodValue(value)
         console.log(value)
     }
-
-    const ButtonDateCharts = ButtonDate
 
     function handleChartsDate(date: Date) {
         setChartsDate(date)
@@ -180,30 +182,24 @@ export function ChartsMenu() {
     function handleMarketplacesModal() {
         setModalIsOpen(!modalIsOpen)
     }
+    const radioPeriod = [
+        { id: 'hour', value: 'Hour' },
+        { id: 'day', value: 'Day' },
+        { id: 'week', value: 'Week' },
+    ]
+
+    const radioPrice = [
+        { id: 'spot_price', value: 'Spot Price' },
+        { id: 'installment_price', value: 'Installment Price' },
+    ]
 
     return (
-        <Container fluid id="charts-menu-container">
-            <div className="menu-button-section">
+        <Box id="charts-menu-container">
+            <Box className="menu-button-section">
                 <p className="button-label">Period</p>
-                <ToggleButtonGroup
-                    className="clickable-toggle-button btn-shadow"
-                    type="radio"
-                    name="period-options"
-                    defaultValue={periodValue}
-                    onChange={value => handlePeriodValue(value)}
-                >
-                    <ToggleButton id="tbg-hour" value={'hour'}>
-                        Hour
-                    </ToggleButton>
-                    <ToggleButton id="tbg-day" value={'day'}>
-                        Day
-                    </ToggleButton>
-                    <ToggleButton id="tbg-week" value={'week'}>
-                        Week
-                    </ToggleButton>
-                </ToggleButtonGroup>
-            </div>
-            <div className="menu-button-section">
+                <RadioGroup radioButtonItems={radioPeriod} onChange={handlePeriodValue} />
+            </Box>
+            <Box className="menu-button-section">
                 <p className="button-label">Date</p>
                 <DatePicker
                     selected={chartsDate}
@@ -211,37 +207,29 @@ export function ChartsMenu() {
                     dateFormat="yyyy-MM-dd"
                     customInput={<ButtonDateCharts />}
                 />
-            </div>
-            <div className="menu-button-section">
+            </Box>
+            <Box className="menu-button-section">
                 <p className="button-label">Form of payment</p>
-                <ToggleButtonGroup
-                    className="clickable-toggle-button btn-shadow"
-                    type="radio"
-                    name="price-options"
-                    defaultValue={formOfPayment}
-                    onChange={form => handleFormOfPayment(form)}
-                >
-                    <ToggleButton id="tbg-spot" value={'spot'}>
-                        Spot Price
-                    </ToggleButton>
-                    <ToggleButton id="tbg-installment" value={'installment'}>
-                        Installment Price
-                    </ToggleButton>
-                </ToggleButtonGroup>
-            </div>
-            <div className="menu-button-section">
+                <RadioGroup radioButtonItems={radioPrice} onChange={handleFormOfPayment} />
+            </Box>
+            <Box className="menu-button-section">
                 <p className="button-label">Marketplace</p>
-                <Button type="button" className="clickable-button btn-shadow" onClick={handleMarketplacesModal}>
+                <Button
+                    height="auto"
+                    type="button"
+                    className="clickable-button btn btn-shadow"
+                    onClick={handleMarketplacesModal}
+                >
                     {JSON.stringify(selectedMarketplaces) === JSON.stringify(marketplacesReference)
                         ? 'All marketplaces'
                         : 'Not all marketplaces'}
                 </Button>
-            </div>
-            <MarketplacesModal
-                modalIsOpen={modalIsOpen}
-                handleMarketplacesModal={handleMarketplacesModal}
-                marketplaces={marketplaces}
-            />
-        </Container>
+                <MarketplacesModal
+                    modalIsOpen={modalIsOpen}
+                    handleMarketplacesModal={handleMarketplacesModal}
+                    marketplaces={marketplaces}
+                />
+            </Box>
+        </Box>
     )
 }

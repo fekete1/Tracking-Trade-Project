@@ -94,7 +94,7 @@ export function LineChart({ chartTitle }: LineChartProps) {
         <>
             <div className="graphic-container">
                 <span className="tooltip-charts">
-                    <ToolTipInfo />
+                    <ToolTipInfo tooltipText="Alguma informação do gráfico de Colunas" />
                 </span>
 
                 <Chart options={state.options} series={state.series} type="line" height="220px" width="800px" />

@@ -1,12 +1,7 @@
 @import "variables";
 
 #product-info-main-container{
-    width: 100%;
-    margin-top: 12px;
-
-    border-radius: 4px;
     overflow: hidden;
-
     box-shadow: $box-shadow;
 
     .product-first-section{
@@ -53,7 +48,6 @@
     }
 
     .product-second-section{
-        display:flex;
         flex-direction: column;
         align-items: flex-end;
         justify-content: space-between;
@@ -68,17 +62,8 @@
             color: $auxiliar-text-color;
         }
 
-        .rating-section{
-            display: flex;
-            align-items: flex-end;
-
-            .rating-label{
-                display: inline-block;
-            }
-
+        .product-offers-tooltip{
+            z-index: 3
         }
-
-
-
     }
 }

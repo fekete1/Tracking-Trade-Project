@@ -1,8 +1,7 @@
 @import "variables";
 
 #product-offers-container{
-    margin-top:12px;
-    margin-bottom: 12px;
+    width: 100%;
     max-height:560px;
     background: $bg-auxiliar-color;
     border-radius: 4px;
@@ -43,11 +42,20 @@
 
         .offers-label{
             display: flex;
+            position:relative;
 
             p{
                 font: 600 14px Sans-serif;
                 color: $auxiliar-text-color;
                 margin: 8px;
+            }
+
+            .product-offers-tooltip{
+                position: absolute;
+                top: 5px;
+                right: -12px;
+
+                z-index: 3;
             }
 
         }
@@ -67,15 +75,22 @@
         }
     }
 
-    .table{
+    .table-offers-container{
+        overflow-x: auto;
+    }
+
+    .table-offers{
         margin-top:16px;
+        width: 100%;
         display: table;
 
         th{
-            font: 600 13px Sans-serif;
+            font: 600 12px Sans-serif;
+            text-transform: none;
             color: $auxiliar-text-color;
             display:table-cell;
             vertical-align:middle;
+            padding:4px;
 
             &:not(:first-child){
                 text-align: center;

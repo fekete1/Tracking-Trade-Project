@@ -1,59 +1,64 @@
 @import "variables";
 
 #top-menu-main-container{
+    background: $bg-auxiliar-color;
+    position: sticky;
+    display: flex;
+
+    justify-content: space-between;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+
+    top: 0;
+    z-index: 1020;
+
     padding-right:10px;
     padding-left:10px;
 
     box-shadow: $box-shadow;
 
-    .top-menu-content{
-        width: 100%;
-        display:flex;
-        justify-content: space-between;
-
-    }
-
-    .search-section{
-        display:flex;
-        gap:10px;
-
-    }
 
     .btn{
         font-size: 16px;
 
         padding:0;
         margin: 0.375rem 0.75rem;
-        outline: none;
+        outline:none;
         border: none;
         background: transparent;
         cursor: pointer;
 
-    }
-
-    a#basic-nav-dropdown{
-        font: 500 14px Sans-serif !important;
-        color: $auxiliar-text-color;
-
-    }
-
-    .logout-item{
-        display:flex;
-        align-items: center;
-        justify-content:flex-start;
-
-        &:focus{
-            background: rgba(0, 0, 0, 0.2)
+        &:focus, &:hover{
+            transition: ease 0.2s;
+            transform: scale(110%);
         }
+
+        &:focus-visible{
+            border-radius: 4px;
+            outline: 1px solid black;
+        }
+
+    }
+    .btn-username-menu:focus-visible{
+        border-radius: 4px;
+        outline: 1px solid black;
+    }
+
+    .username-text{
+        font: 500 13px Sans-serif;
+        color: $auxiliar-text-color;
+    }
+
+    .logout-container{
+
         .logout-icon{
             font-size:14px;
             color:red;
             margin-right:4px;
-            margin-top:-4px;
         }
         .logout-text{
-            font: 600 13px Sans-serif;
-            color: $auxiliar-text-color;
+            font: 500 13px Sans-serif;
+            color: $side-menu-color;
         }
     }
 

@@ -12,8 +12,8 @@
 
     .search-icon{
         position:absolute;
-        left: 10px;
-        margin-bottom: 4px;
+        left: -2px;
+        top: -2px;
         z-index:2;
     }
 
@@ -37,7 +37,7 @@
     }
 
     .btn-product-search-container{
-        padding:4px;
+        padding: 0.2rem 0.6rem;
         display: flex;
         flex-direction: row;
 
@@ -85,7 +85,24 @@
 
     border-radius: 4px;
 
-    box-shadow: $box-shadow-contrasting
+    box-shadow: $box-shadow-contrasting;
+
+    .list-group{
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        border-radius: 0.25rem;
+    }
+
+    .list-group-item{
+        position: relative;
+        display: block;
+        color: #212529;
+        text-decoration: none;
+        background-color: #fff;
+        width: 100%;
+        text-align: inherit;
+    }
 }
 
 
